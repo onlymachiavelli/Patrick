@@ -262,7 +262,7 @@ const Signup = ({navigation}:any) =>{
 
 
 
-            <Input Text={"Enter your Address"}
+            <Input Text={"Enter your Password"}
             Secure={true}
                 Value={password}
                 OnChange={(e:any)=>{

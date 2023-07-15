@@ -21,21 +21,29 @@ const useSignUp = () =>{
 
 
     const MakeLogin = async () =>{
+
+
+        //get the day as postgres type date for the birthday 
+        setMonth(Number(month) < 9 ? "0"+month : month)
+        setDay(Number(day) < 9 ? "0"+day : day)
+        const bd:any = `${year}-${month}-${day}`
+        const bday = new Date(Number(year), Number(month) - 1, Number(day)).toISOString().split('T')[0];
+
         const body : any ={
             fullname : fullname, 
             email : email,
             phone : phone,
             gender : gender,
             address : address, 
-            bday : `${year}-${month}-${day}`,
+            bday : bday,
             type : type,
             password : password
         }
-        //check the data before sending the request, 
-        //do it later, 
-        console.log("Hello",body)
-        return 
-         const ip : any = AsyncStorage.GetOne("ip")
+        console.log(body)
+        //add a code to check the content of the data 
+
+        const ip : any = await AsyncStorage.GetOne("ip")
+        console.log(ip)
         axios.post(`http://${ip}:3000/users` , body).then((res)=>{
             console.log(res)
             if (res.status == 200) {
