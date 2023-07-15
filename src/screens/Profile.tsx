@@ -6,7 +6,8 @@ import Lottie from 'lottie-react-native'
 import Male from './../lottieFiles/Male.json'
 import {InfoCard} from './../components'
 import { LinearGradient } from 'expo-linear-gradient'
-import {AntDesign, Entypo,FontAwesome   } from '@expo/vector-icons'
+import Logo from './../lottieFiles/logo.json'
+import {AntDesign, Entypo,FontAwesome, Feather ,MaterialCommunityIcons ,FontAwesome5   } from '@expo/vector-icons'
 const Profile = () =>{
 
 
@@ -166,10 +167,65 @@ const Profile = () =>{
 
         <Native.TouchableOpacity style={profile.editButton}>
             <Native.Text style={profile.editText}>
-                Edit Profile
+            <Feather name="edit" size={16} color="white" /> Edit Profile
             </Native.Text>
         </Native.TouchableOpacity>
+
+
+        <Native.View
+            style={profile.numberBlock}
+        >
+
+            <Native.TouchableOpacity style={profile.buttonData}>
+                <Native.View>
+                <MaterialCommunityIcons name="google-circles-communities" size={50} color="white" />
+                </Native.View>
+            
+            <Native.Text style={profile.buttonDataText}>
+                180
+            </Native.Text>
+
+            <Native.Text style={profile.buttonDataText}>
+                SUPERVISORS
+            </Native.Text>
+            </Native.TouchableOpacity>
+
+            <Native.TouchableOpacity style={profile.buttonData}>
+                <Native.View>
+                <FontAwesome5 name="heartbeat" size={50} color="white" />
+            </Native.View>
+            
+            <Native.Text style={profile.buttonDataText}>
+                78%
+            </Native.Text>
+
+            <Native.Text style={profile.buttonDataText}>
+                HEALTH : STABLE
+            </Native.Text>
+            </Native.TouchableOpacity>
+
+        </Native.View>
       </LinearGradient>
+
+      
+      <Native.Text style={{
+        fontSize:20,
+        textAlign:"center",
+        padding:20
+      }}>
+        It's quite for now.
+      </Native.Text>
+      <Native.View style={{alignSelf:"center"}}>
+        <Lottie
+            source={Logo}
+            loop
+            autoPlay
+            style={{
+                width:200,
+                height:200,}}
+                ref={animationRef}
+        />
+      </Native.View>
         </Native.View>
     )
 }

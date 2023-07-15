@@ -16,7 +16,7 @@ import {
     },
     cov :{
         width : "100%" , 
-        height : 350, 
+        height : 400, 
         //shadow 
         shadowColor: "#000",
         shadowOffset: {
@@ -24,10 +24,10 @@ import {
         height: 0.5,
         },
         shadowOpacity: 0.5,
-        shadowRadius: 6,
         borderRadius:40,
         paddingTop:60,
-        padding:10
+        padding:10,
+        borderBottomEndRadius:6
     }   ,
     proInfo:{
         width : "100%", 
@@ -78,6 +78,29 @@ import {
     },
     editText:{
         color :"white"
+    },
+
+    numberBlock:{
+        width:"100%",
+        display :"flex" , 
+        alignContent:"center" , 
+        justifyContent:"center",
+        flexDirection:"row",
+        marginTop:20
+    },
+    buttonData:{
+        width:"40%",
+        display :"flex" , 
+        alignItems :"center" , 
+        justifyContent:"center", 
+        flexDirection:"column",
+        marginTop:20
+
+    },
+    buttonDataText:{
+        color:"white",
+        fontWeight:"bold",
+        fontSize:17
     }
     
 
