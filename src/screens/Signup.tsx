@@ -10,7 +10,8 @@ import {User} from './../components/svg'
 
 import DropDownPicker from 'react-native-dropdown-picker'
 import useSignUp from '../hooks/Signup'
-
+import Aged from './../lottieFiles/Aged.json'
+import Supervisor from './../lottieFiles/Supervisor.json'
 
 const Signup = ({navigation}:any) =>{
 
@@ -41,10 +42,101 @@ const Signup = ({navigation}:any) =>{
       setType,
       setPassword,
       day, year, month, 
-      setDay, setYear, setMonth,pass, setPass
+      setDay, setYear, setMonth,pass, setPass,
   } = useSignUp()
-    return (
-        <Native.SafeAreaView style={signup.container}>
+    return !type?(
+
+        <Native.ScrollView style={signup.container}>
+
+            <Header/>
+
+
+            <Native.Text style={
+                signup.title
+            }>
+                Select your VegaCare Account Type
+            </Native.Text>
+
+           <Native.TouchableOpacity style={signup.BigButton}
+            onPress={()=>{
+                setType("patient")
+                Native.ToastAndroid.show(
+                    
+                    "You are now a Patient",
+                    Native.ToastAndroid.SHORT
+
+                )
+            }}
+           >
+                
+                <Native.View style={{}}>
+                <Lottie 
+                    source={Aged}
+                    autoPlay
+                    loop
+                    style={signup.logo}
+                    ref={animationRef}
+            />
+
+                </Native.View>
+
+            <Native.Text style={{
+
+                color : "white",
+                fontSize : 20,
+                fontWeight : "bold",
+                textAlign : "center",
+                padding : 10,
+                paddingBottom:30
+            }}>
+                Create VegaCare as a Patient
+            </Native.Text>
+           </Native.TouchableOpacity>
+
+
+           <Native.TouchableOpacity style={signup.BigButton}
+            onPress={()=>{
+                setType("supervisor")
+                Native.ToastAndroid.show(
+                    
+                    "You are now a Supervisor",
+                    Native.ToastAndroid.SHORT
+
+                )
+            }}
+           >
+                
+                <Native.View style={{}}>
+                <Lottie 
+                    source={
+                        Supervisor
+                    }
+                    autoPlay
+                    loop
+                    style={signup.logo}
+                    ref={animationRef}
+            />
+
+                </Native.View>
+
+            <Native.Text style={{
+
+                color : "white",
+                fontSize : 20,
+                fontWeight : "bold",
+                textAlign : "center",
+                padding : 10,
+                paddingBottom:30
+            }}>
+                Create VegaCare as a SuperVisor
+            </Native.Text>
+           </Native.TouchableOpacity>
+
+                    
+        </Native.ScrollView>
+
+    ): (
+        <Native.ScrollView style={signup.container}>
             <Header/>
 
             {
@@ -72,23 +164,78 @@ const Signup = ({navigation}:any) =>{
 
             <Native.View>
 
-            <Input Text={"Enter your Full name"} />
-            <Input Text={"Enter your Email"} />
-            <Input Text={"Enter your Phone Number"} />
-            <Input Text={"Enter your Address"}/>
+            <Input Text={"Enter your Full name"} 
+            
+                Value={fullname}
+                OnChange={
+                    
+                    (e:any)=>{
+                        setFname(e)
+                        console.log(fullname)
+                    }
+                }
+            />
+            <Input Text={"Enter your Email"}
+                Value={email}
+                OnChange={(e:any)=>{
+                    setEmail(e)
+                    console.log(email)
+                }}
+
+            />
+            <Input Text={"Enter your Phone Number"}
+                 Value={phone}
+                 OnChange={(e:any)=>{
+                    setPhone(e)  
+                    console.log(phone)
+                 }}
+                 Number={true}
+            />
+            <Input Text={"Enter your Address"}
+                Value={address}
+                OnChange={(e:any)=>{
+                    setAddress(e)
+                    console.log(address)
+                }
+            }
+            />
 
 
             
             
            <Native.View style={{display:"flex", flexDirection:"row",alignItems:"center", justifyContent:"center"}}>
-            <SmallInp Text={"Day"} Number={true} Length={2} />
-            <SmallInp Text={"Month"} Number={true} Length={2} />
-            <SmallInp Text={"Year"} Number={true} Length={4} />
+            <SmallInp Text={"Day"} Number={true} Length={2}
+                Value={day}
+                OnChange={
+                    (e:any)=>{
+                        
+                        setDay(e)
+                        console.log(day)
+                    }
+                }
+            />
+            <SmallInp Text={"Month"} Number={true} Length={2} 
+                Value={month}
+                OnChange={(e:any)=>{
+                    setMonth(e)
+                    console.log(month)
+                }}
+            />
+            <SmallInp Text={"Year"} Number={true} Length={4} 
+                Value={year}
+                OnChange={
+                    (e:any)=>{
+
+                        setYear(e)
+                        console.log(year)
+                    }
+
+                }
+            />
 
            </Native.View>
 
-           <Native.View style={{ position: 'relative', zIndex: 1 }}>
-            {/* Other content or components */}
+           <Native.View style={{ marginTop: 10, marginBottom: 10, width: "90%", alignSelf: "center", zIndex: 2 }}>
             <DropDownPicker
                 open={open}
                 value={gender}
@@ -98,29 +245,39 @@ const Signup = ({navigation}:any) =>{
                 setValue={setGender}
                 setItems={setGenders}
                 style={{
-                marginTop: 10,
-                marginBottom: 10,
-                width: "90%",
-                alignSelf: "center",
-                zIndex: 2, // Adjust the zIndex value
+                borderColor: "#555",
+                borderWidth: 0.5,
+                shadowColor: "#000",
+                shadowOffset: {
+                    width: 0,
+                    height: 0.5,
+                },
+                shadowOpacity: 0.5,
+                shadowRadius: 6,
+                elevation: 6,
+                borderRadius: 5,
                 }}
             />
             </Native.View>
 
 
 
-            <Input Text={"Enter your Password"} Type={"emailAddress"}/>
-            <Input Text={"Confirm your Password"} Type={"emailAddress"}/>
-            {
-                //bday
+            <Input Text={"Enter your Address"}
+            Secure={true}
+                Value={password}
+                OnChange={(e:any)=>{
+                    setPassword(e)
+                    console.log(password)
+                }
             }
-            {
-                //gender
-            }
-
+            />
+           
 
                 <Native.TouchableOpacity
                     style={signup.button}
+                    onPress={()=>{
+                        MakeLogin()
+                    }}
 
                 >
 
@@ -146,7 +303,7 @@ const Signup = ({navigation}:any) =>{
                         </Native.TouchableOpacity>
 
                     
-        </Native.SafeAreaView>
+        </Native.ScrollView>
     )
 }
 

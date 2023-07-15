@@ -16,6 +16,9 @@ const Input = ({...props}) =>{
                 keyboardType={props.Number  ? "numeric" : "default"}
                 //type
                 textContentType={props.Type}
+
+                value={props.Value}
+                onChange={(e:any)=>{props.OnChange(e.nativeEvent.text)}}
             />
 
         
@@ -37,6 +40,8 @@ const SmallInp = ({...props}) =>{
                     //limit 
 
                     maxLength={props.Length}
+                    value={props.Value}
+                    onChange={(e:any)=>{props.OnChange(e.nativeEvent.text)}}
 
                     //type
                 />

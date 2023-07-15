@@ -33,9 +33,10 @@ const useSignUp = () =>{
         }
         //check the data before sending the request, 
         //do it later, 
-        console.log(body)
-         
-        axios.post("http://localhost:3000/users" , body).then((res)=>{
+        console.log("Hello",body)
+        return 
+         const ip : any = AsyncStorage.GetOne("ip")
+        axios.post(`http://${ip}:3000/users` , body).then((res)=>{
             console.log(res)
             if (res.status == 200) {
                 AsyncStorage.SetOne("token" , res.data.token)
@@ -68,6 +69,7 @@ const useSignUp = () =>{
         setBday,
         setType,
         setPassword,
+        
 
 
         day, year, month, 

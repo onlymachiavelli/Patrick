@@ -54,6 +54,27 @@ const signup = StyleSheet.create({
     restore:{
         alignSelf:"center", 
         margin : 20
+    },
+    BigButton:{
+        width : "90%" , 
+        height : "auto", 
+        backgroundColor : "#4C9FD5",
+        shadowColor: "#000",
+        shadowOffset: {
+        width: 4,
+        height: 4,
+        },
+        shadowOpacity: 0.5,
+        shadowRadius: 6,
+        // Android elevation
+        elevation: 6,
+        borderRadius:5,
+        display : "flex",
+        flexDirection : "column",
+        alignItems : "center",
+        justifyContent : "center",
+        alignSelf:"center",
+        marginTop:20
     }
 })
 

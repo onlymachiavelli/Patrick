@@ -6,7 +6,7 @@ import { AsyncStorage } from '../hooks'
 import axios from 'axios'
 const {height} = Native.Dimensions.get("window")
 
-
+import {SignIn, Signup} from './index'
 const useTester = () =>{
 
 
@@ -278,6 +278,56 @@ const Tester = ({navigation} :any) =>{
             </Native.Text>
 
             </Native.TouchableOpacity>
+
+
+
+
+
+
+            <Native.TouchableOpacity
+           
+            
+                style={{
+                    backgroundColor: "#004a9e",
+                    padding: 10,
+                    borderRadius: 5,
+                    marginTop: 10,
+                    alignSelf: "center",
+                    // iOS shadow
+                    shadowColor: "#000",
+                    shadowOffset: {
+                      width: 0,
+                      height: 0.5,
+                    },
+                    shadowOpacity: 0.5,
+                    shadowRadius: 6,
+                    // Android elevation
+                    elevation: 6,
+                    width : "80%" ,
+                    alignItems : "center",
+                }}
+                onPress={()=>{
+
+                    navigation.navigate('Signin')
+                }}
+            >
+
+                <Native.Text
+                    style={{
+                        color : "white"
+                    
+                    }}
+                >
+                    Open Demo 
+                </Native.Text>
+
+
+
+
+                
+            </Native.TouchableOpacity>
+
+
 
 
 
