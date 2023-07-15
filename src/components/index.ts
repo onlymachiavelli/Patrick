@@ -1,4 +1,5 @@
 import Header from "./header"
 import Input from "./Input"
 import { SmallInp } from "./Input"
-export {Header, Input, SmallInp}
+import InfoCard from "./InfoCard"
+export {Header, Input, SmallInp, InfoCard}

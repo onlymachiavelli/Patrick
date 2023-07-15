@@ -12,9 +12,9 @@ import DropDownPicker from 'react-native-dropdown-picker'
 import useSignUp from '../hooks/Signup'
 import Aged from './../lottieFiles/Aged.json'
 import Supervisor from './../lottieFiles/Supervisor.json'
-
+import {useNavigation} from '@react-navigation/native'
 const Signup = ({navigation}:any) =>{
-
+    
     const animationRef = React.useRef<Lottie>(null)
 
 
@@ -43,7 +43,7 @@ const Signup = ({navigation}:any) =>{
       setPassword,
       day, year, month, 
       setDay, setYear, setMonth,pass, setPass,
-  } = useSignUp()
+  } = useSignUp(navigation)
     return !type?(
 
         <Native.ScrollView style={signup.container}>

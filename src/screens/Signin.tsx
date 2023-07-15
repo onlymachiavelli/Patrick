@@ -7,8 +7,20 @@ import Lottie from 'lottie-react-native'
 import Lotti from './../lottieFiles/logo.json'
 import { Header,Input } from './../components/index'
 import {User} from './../components/svg'
+import useSignin from '../hooks/useSignin'
 const SignIn = ({navigation} : any) =>{
+    const {
+        Login,
+       email,  password, 
+        
+    
+        setEmail,
 
+        setPassword
+
+
+       
+    } = useSignin()
     const animationRef = React.useRef<Lottie>(null)
     return (
         <Native.ScrollView style={signin.container}>
@@ -39,6 +51,10 @@ const SignIn = ({navigation} : any) =>{
                 Type={
                     "emailAddress"
                 }
+                Secure={false}
+                Value={email}
+                OnChange={setEmail}
+
 
 
                 />
@@ -51,12 +67,17 @@ const SignIn = ({navigation} : any) =>{
                 }
                 Secure={true}
                 
+                Value={password}
+                OnChange={setPassword}
 
                 />
 
 
                 <Native.TouchableOpacity
                     style={signin.button}
+                    onPress={()=>{
+                        Login()
+                    }}
 
                 >
 

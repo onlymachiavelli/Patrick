@@ -2,8 +2,9 @@
 import * as React from 'react'
 import axios from 'axios'
 import * as AsyncStorage from './AsyncStorage'
-
-const useSignUp = () =>{
+import { ToastAndroid } from 'react-native'
+import { Happy } from '../screens'
+const useSignUp = (navigation : any) =>{
 
     const [fullname , setFname] = React.useState("")
     const [email , setEmail] = React.useState("")
@@ -48,17 +49,33 @@ const useSignUp = () =>{
             console.log(res)
             if (res.status == 200) {
                 AsyncStorage.SetOne("token" , res.data.token)
-                alert("You're account is created, now heading to the dashboard")
+                
+
+                ToastAndroid.show(
+                    "Account is created ! Heading to complete your account" , 
+                    ToastAndroid.SHORT
+                )
+                    const Target :any = Happy
+                    //navigate to profile 
+                    navigation.navigate(Target)
+                    
+
+
             }
             else {
-                alert("Please fill the form with valid data")
-            }
+                ToastAndroid.show(
+                    "Please check your credentials" , 
+                    ToastAndroid.SHORT
+                )            }
             
             return res.data
         })
         .catch((e:any)=>{
             console.log((e))
-            alert("I guess there's an internal error , osber wala rabbi maak")
+            ToastAndroid.show(
+                "Please check your credentials" , 
+                ToastAndroid.SHORT
+            )             
             return e.response 
         })
     }   
