@@ -8,79 +8,22 @@ import {InfoCard} from './../components'
 import { LinearGradient } from 'expo-linear-gradient'
 import Logo from './../lottieFiles/logo.json'
 import {AntDesign, Entypo,FontAwesome, Feather ,MaterialCommunityIcons ,FontAwesome5   } from '@expo/vector-icons'
-const Profile = () =>{
+import useGetMe from '../hooks/useGetme'
+const Profile = ({navigation}:any) =>{
+    const  {
+        GetMe, 
+        user, 
+    } = useGetMe(navigation)
 
+    React.useEffect(()=>{
 
-    /*
-    
-        <Lottie
-                
-                source={Male}
-                loop
-                autoPlay
-                style={{
-                    width:200,
-                    height:200
-                    ,}}
-                ref={animationRef}
+        GetMe()
 
-                />
-
-
-                <Native.View style={
-                profile.cov
-            }>
-
-            </Native.View>
-
-            <Native.View style={profile.profileContainer}>
-                
-                
-                
-                </Native.View>
-
-                <Native.Text style={profile.name}>
-                    Alaa Barka ( Patient )
-                </Native.Text>
-
-                <Native.TouchableOpacity>
-
-                <Native.TouchableOpacity style={profile.edit}>
-                    <Native.Text style={{
-                        color:"#4C9FD5"
-                    }}>
-                    Edit Profile
-                    </Native.Text>
-                </Native.TouchableOpacity>
-                </Native.TouchableOpacity>
-
-                
-
-
-                <Native.View style={profile.dataContainer}>
-                <InfoCard
-                    Title="Email Address"
-                    Data="mralaabarka@gmail.com"
-                />
-                <InfoCard
-                    Title="Phone Number"
-                    Data="54324884"
-                />
-                <InfoCard
-                    Title="Phone"
-                    Data="54324884"
-                />
-                <InfoCard
-                    Title="Birthday"
-                    Data="2002-04-07"
-                />
-                <InfoCard
-                    Title="Gender"
-                    Data="Male"
-                />
-                </Native.View>
-    */
-    //create a ref 
+    }
+    ,[])
+    if (user){
+        console.log(user)
+    }
     const animationRef = React.useRef(null)
     return (
         <Native.View style={profile.container}>
@@ -112,18 +55,26 @@ const Profile = () =>{
 
             <Native.View>
                 <Native.Text style={profile.name}>
-                    Alaa Eddine Barka
+                    {
+                        user ? user.user.fullname : "Loading..."
+                    }
                 </Native.Text>
 
                 <Native.Text style={profile.id}>
-                <AntDesign name="user" size={10} color="white" /> ID:@123456789
+                <AntDesign name="user" size={10} color="white" /> ID:@{
+                        user ? user.user.id : "Loading..."
+                }
                 </Native.Text>
                 <Native.Text style={profile.data}>
-                    <AntDesign name="enviroment" size={13} color="white" /> 24 Rue Wadhraf Darfadhal Soukra
+                    <AntDesign name="enviroment" size={13} color="white" /> {
+                        user ? user.user.address : "Loading..."
+                    }
                 </Native.Text>
 
                 <Native.Text style={profile.data}>
-                    <FontAwesome name="phone" size={15} color="white" /> 54324884
+                    <FontAwesome name="phone" size={15} color="white" /> {
+                        user ? user.user.phone : "Loading..."
+                    }
                 </Native.Text>
 
                 <Native.Text style={profile.data}>

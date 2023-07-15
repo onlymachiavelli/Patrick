@@ -20,7 +20,7 @@ const SignIn = ({navigation} : any) =>{
 
 
        
-    } = useSignin()
+    } = useSignin(navigation)
     const animationRef = React.useRef<Lottie>(null)
     return (
         <Native.ScrollView style={signin.container}>

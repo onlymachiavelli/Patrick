@@ -2,7 +2,7 @@ import * as React from 'react'
 import axios from 'axios'
 import * as AsyncStorage from './AsyncStorage'
 import { ToastAndroid } from 'react-native'
-const useSignin = () =>{
+const useSignin = (navigation:any) =>{
 
     const [email , setEmail] = React.useState("")
     const [password, setPassword] = React.useState("")
@@ -18,15 +18,17 @@ const useSignin = () =>{
         //check the data before sending the request, 
         //do it later, 
         console.log(body)
-         
-        axios.post("http://192.168.1.48:3000/users/login" , body).then((res)=>{
+         const ip : any = await AsyncStorage.GetOne("ip")
+        axios.post(`http://${ip}:3000/users/login` , body).then((res)=>{
             console.log(res)
             if (res.status == 200) {
                 AsyncStorage.SetOne("token" , res.data.token)
                 ToastAndroid.show(
-                    "Authenticated, Heading to your profile", 
+                    "Authenticated, Heading to your Profile", 
                     ToastAndroid.SHORT
                 )
+                navigation.navigate("Profile")
+
             }
             else {
                 ToastAndroid.show(

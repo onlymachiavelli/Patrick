@@ -8,7 +8,7 @@ const App = () =>{
   return (
     <NavigationContainer >
       <Stack.Navigator 
-        initialRouteName="Profile"
+        initialRouteName="Tester"
       >
         
           <Stack.Screen 
