@@ -312,7 +312,7 @@ const Tester = ({navigation} :any) =>{
                                     {item[0]}
                                 </Native.Text>
                                 <Native.Text>
-                                    {item[1].substr(0, 20) + "..."}
+                                    {item[1]}
                                 </Native.Text>
                             </Native.View>
                         )

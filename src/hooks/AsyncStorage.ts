@@ -16,14 +16,14 @@ const DeleteOne = async (target : any) =>{
 }
 
 const GetAll = async () =>{
-    let arr = []
-    let b = await AsyncStorage.getAllKeys()
+    //get all cache 
 
-    for (let i = 0; i < b.length; i++) {
-        let a = await AsyncStorage.getItem(b[i])
-        arr.push(a)
-    }
-    return arr
+    
+    let keys:any = []
+    let values:any = []
+        keys = await AsyncStorage.getAllKeys()
+        values = await AsyncStorage.multiGet(keys)
+        return values
 }
 
 const FreeUp = async () => await AsyncStorage.clear()
