@@ -2,6 +2,7 @@ import * as React from 'react'
 import { createStackNavigator } from '@react-navigation/stack'
 import { NavigationContainer } from '@react-navigation/native'
 import Tester from './src/screens/tester'
+import * as Screens from './src/screens'
 
 const Stack = createStackNavigator()
 const App = () =>{
@@ -14,7 +15,7 @@ const App = () =>{
         
           <Stack.Screen 
             name="Tester"
-            component={Tester}
+            component={Screens.Tester}
           />
       </Stack.Navigator>
     </NavigationContainer>

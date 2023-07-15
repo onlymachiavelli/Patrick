@@ -2,7 +2,7 @@ import * as Native from 'react-native'
 
 import * as React from 'react'
 
-import AsyncStorage from '@react-native-async-storage/async-storage'
+import { AsyncStorage } from '../hooks'
 import axios from 'axios'
 const {height} = Native.Dimensions.get("window")
 
@@ -64,14 +64,15 @@ const Tester = ({navigation} :any) =>{
 
     React.useEffect(() => {
         
-        AsyncStorage.getItem("ip").then((res:any)=>{setAdd(res)})
+        AsyncStorage.GetOne("ip").then((res:any)=>{setAdd(res)})
 
-        AsyncStorage.getAllKeys()
-        .then(keys => AsyncStorage.multiGet(keys))
-        .then((result : any) => {
-            setCache(result)
-        })
-        .catch(err => console.log(err))
+        AsyncStorage.GetAll()
+        .then((res:any) => {
+            setCache(res)
+        }
+        )
+        console.log('caches', Caches);
+        //console.log(`address ${JSON.stringify({...address})}`)
     } , [])
     return (
         <Native.ScrollView
@@ -133,7 +134,7 @@ const Tester = ({navigation} :any) =>{
 
             <Native.TouchableOpacity
             onPress={()=>{
-                AsyncStorage.setItem("ip" , address)
+                AsyncStorage.SetOne("ip" , address)
                 .then(() => {
                     setCache([...Caches, address ])
 
@@ -206,7 +207,7 @@ const Tester = ({navigation} :any) =>{
 
 
             onPress={()=>{
-                AsyncStorage.clear()
+                AsyncStorage.FreeUp()
                 .then(() => {
                     setCache([])
 
