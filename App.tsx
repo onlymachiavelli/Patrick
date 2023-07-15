@@ -1,34 +1,24 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View , TouchableOpacity, ToastAndroid} from 'react-native';
+import * as React from 'react'
+import { createStackNavigator } from '@react-navigation/stack'
+import { NavigationContainer } from '@react-navigation/native'
+import Tester from './src/screens/tester'
 
-export default function App() {
-
-  const onClicke = () =>{
-    
-
-    ToastAndroid.show("A pikachu appeared nearby !", ToastAndroid.SHORT);
-  }
+const App = () =>{
+  //create stack 
+  const Stack = createStackNavigator()
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-
-
-
-      <TouchableOpacity onPress={()=>{
-        onClicke()
-      }}>
-        <Text>Click Me</Text>
-      </TouchableOpacity>
-    </View>
-  );
+    <NavigationContainer >
+      <Stack.Navigator 
+        initialRouteName="Tester"
+      >
+        
+          <Stack.Screen 
+            name="Tester"
+            component={Tester}
+          />
+      </Stack.Navigator>
+    </NavigationContainer>
+  )
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default  App
