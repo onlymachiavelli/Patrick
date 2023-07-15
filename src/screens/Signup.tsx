@@ -8,12 +8,43 @@ import Lotti from './../lottieFiles/logo.json'
 import { Header,Input, SmallInp } from './../components/index'
 import {User} from './../components/svg'
 
+import DropDownPicker from 'react-native-dropdown-picker'
+import useSignUp from '../hooks/Signup'
+
 
 const Signup = ({navigation}:any) =>{
 
     const animationRef = React.useRef<Lottie>(null)
+
+
+    const [genders, setGenders] = React.useState([
+        {
+          label : 'Male' , value : 'male',
+        }, 
+        {
+          label : 'Female' , value : 'female'
+        }
+  
+    ])
+    const [open, setOpen] = React.useState(false)
+    //
+    const {
+      MakeLogin,
+      fullname,email,phone, gender , address , bday , type,  password, 
+      
+      setFname, 
+      setEmail,
+      setPhone,
+      setGender,
+      setAddress,
+      setBday,
+      setType,
+      setPassword,
+      day, year, month, 
+      setDay, setYear, setMonth,pass, setPass
+  } = useSignUp()
     return (
-        <Native.ScrollView style={signup.container}>
+        <Native.SafeAreaView style={signup.container}>
             <Header/>
 
             {
@@ -56,6 +87,27 @@ const Signup = ({navigation}:any) =>{
 
            </Native.View>
 
+           <Native.View style={{ position: 'relative', zIndex: 1 }}>
+            {/* Other content or components */}
+            <DropDownPicker
+                open={open}
+                value={gender}
+                items={genders}
+                placeholder='Select your gender'
+                setOpen={setOpen}
+                setValue={setGender}
+                setItems={setGenders}
+                style={{
+                marginTop: 10,
+                marginBottom: 10,
+                width: "90%",
+                alignSelf: "center",
+                zIndex: 2, // Adjust the zIndex value
+                }}
+            />
+            </Native.View>
+
+
 
             <Input Text={"Enter your Password"} Type={"emailAddress"}/>
             <Input Text={"Confirm your Password"} Type={"emailAddress"}/>
@@ -94,7 +146,7 @@ const Signup = ({navigation}:any) =>{
                         </Native.TouchableOpacity>
 
                     
-        </Native.ScrollView>
+        </Native.SafeAreaView>
     )
 }
 

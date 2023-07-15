@@ -1,5 +1,5 @@
 import { StyleSheet , Dimensions} from "react-native"
-const {height} = Dimensions.get("window")
+const {height} = Dimensions.get("screen")
 
 
 
