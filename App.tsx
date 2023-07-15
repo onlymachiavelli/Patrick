@@ -3,9 +3,9 @@ import { createStackNavigator } from '@react-navigation/stack'
 import { NavigationContainer } from '@react-navigation/native'
 import Tester from './src/screens/tester'
 
+const Stack = createStackNavigator()
 const App = () =>{
   //create stack 
-  const Stack = createStackNavigator()
   return (
     <NavigationContainer >
       <Stack.Navigator 
