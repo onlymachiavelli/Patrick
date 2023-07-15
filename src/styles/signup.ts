@@ -3,7 +3,7 @@ const {height} = Dimensions.get("window")
 
 
 
-const signin = StyleSheet.create({
+const signup = StyleSheet.create({
     container :{
         width : "100%", 
         height , 
@@ -58,4 +58,4 @@ const signin = StyleSheet.create({
 })
 
 
-export default signin
+export default signup

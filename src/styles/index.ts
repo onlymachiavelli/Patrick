@@ -1,4 +1,4 @@
 import signin from "./signin"
-
-
-export {signin}
+import signup from "./signup"
+import components from "./components"
+export {signin, components, signup}
