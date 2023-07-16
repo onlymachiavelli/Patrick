@@ -4,4 +4,5 @@ import { SmallInp } from "./Input"
 import InfoCard from "./InfoCard"
 import Footer  from "./Footer"
 import ProfileHeader from "./ProfileHeader"
-export {Header, Input, SmallInp, InfoCard, Footer, ProfileHeader}
+import SideMenu from "./sideBar"
+export {Header, Input, SmallInp, InfoCard, Footer, ProfileHeader, SideMenu}

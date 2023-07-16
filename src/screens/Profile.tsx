@@ -4,11 +4,12 @@ import {Header} from './../components/'
 import { profile } from '../styles'
 import Lottie from 'lottie-react-native'
 import Male from './../lottieFiles/Male.json'
-import {InfoCard, Footer} from './../components'
+import {InfoCard, Footer, SideMenu} from './../components'
 import { LinearGradient } from 'expo-linear-gradient'
 import Logo from './../lottieFiles/logo.json'
 import {AntDesign, Entypo,FontAwesome, Feather ,MaterialCommunityIcons ,FontAwesome5   } from '@expo/vector-icons'
 import useGetMe from '../hooks/useGetme'
+
 const Profile = ({navigation}:any) =>{
     const  {
         GetMe, 
@@ -25,6 +26,7 @@ const Profile = ({navigation}:any) =>{
         console.log(user)
     }
     const animationRef = React.useRef(null)
+    const [menu, setMenu] = React.useState("none")
     return (
         <Native.View style={profile.container}>
                 
@@ -104,6 +106,11 @@ const Profile = ({navigation}:any) =>{
 
             }}>
                 <Native.TouchableOpacity
+
+                    onPress={()=>{
+                        setMenu(menu === "flex" ? "none" : "flex")
+                    }
+                }
                     style={{
                         position:"absolute",
                         right:0,
@@ -177,7 +184,12 @@ const Profile = ({navigation}:any) =>{
                 ref={animationRef}
         />
       </Native.View>
+            
 
+            <SideMenu
+                Display={menu}  
+                Hide={setMenu}
+                />
             <Footer/>
         </Native.View>
     )

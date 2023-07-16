@@ -6,4 +6,5 @@ import profile from './profile'
 import footer from "./footer"
 import heart from "./hrt"
 import profileHeader from "./profileheader"
-export {signin, components, signup, happy, profile, footer, heart, profileHeader}
+import sidemenu from "./sidemenu"
+export {signin, components, signup, happy, profile, footer, heart, profileHeader, sidemenu}

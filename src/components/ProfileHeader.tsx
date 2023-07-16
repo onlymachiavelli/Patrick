@@ -38,7 +38,12 @@ const ProfileHeader = ({...props} ) =>{
             </Native.View>
 
             <Native.View style={profileHeader.burger}>
-                <Native.TouchableOpacity>
+                <Native.TouchableOpacity
+                    onPress={()=>{
+                        props.Display(props.Status === "flex" ? "none" :"flex")
+                    }
+                }
+                >
                     <Entypo name="menu" size={30} color="#555" />
                 </Native.TouchableOpacity>
             </Native.View>
