@@ -7,4 +7,5 @@ import footer from "./footer"
 import heart from "./hrt"
 import profileHeader from "./profileheader"
 import sidemenu from "./sidemenu"
-export {signin, components, signup, happy, profile, footer, heart, profileHeader, sidemenu}
+import medicalinfo from "./medicalinfo"
+export {signin, components, signup, happy, profile, footer, heart, profileHeader, sidemenu, medicalinfo}

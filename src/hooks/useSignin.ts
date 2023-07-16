@@ -27,6 +27,8 @@ const useSignin = (navigation:any) =>{
                     "Authenticated, Heading to your Profile", 
                     ToastAndroid.SHORT
                 )
+                setEmail("")
+                setPassword("")
                 navigation.navigate("Profile")
 
             }
