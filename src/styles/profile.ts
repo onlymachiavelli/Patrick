@@ -24,10 +24,10 @@ import {
         height: 0.5,
         },
         shadowOpacity: 0.5,
-        borderRadius:40,
         paddingTop:60,
         padding:10,
-        borderBottomEndRadius:6
+        borderBottomLeftRadius: 40,
+        borderBottomRightRadius: 40
     }   ,
     proInfo:{
         width : "100%", 

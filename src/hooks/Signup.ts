@@ -64,7 +64,7 @@ const useSignUp = (navigation : any) =>{
             }
             else {
                 ToastAndroid.show(
-                    "Please check your credentials" , 
+                    res.data, 
                     ToastAndroid.SHORT
                 )            }
             
@@ -73,7 +73,7 @@ const useSignUp = (navigation : any) =>{
         .catch((e:any)=>{
             console.log((e))
             ToastAndroid.show(
-                "Please check your credentials" , 
+                e.response.data , 
                 ToastAndroid.SHORT
             )             
             return e.response 
