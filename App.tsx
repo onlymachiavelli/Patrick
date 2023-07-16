@@ -47,9 +47,19 @@ const App = () =>{
             }}
           />
 
-<Stack.Screen 
+      <Stack.Screen 
             name="Profile"
             component={Screens.Profile}
+
+            //remove the header 
+            options={{
+              headerShown: false
+            }}
+          />
+
+      <Stack.Screen 
+            name="HeartStatus"
+            component={Screens.HeartStatus}
 
             //remove the header 
             options={{
