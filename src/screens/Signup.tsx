@@ -13,7 +13,11 @@ import useSignUp from '../hooks/Signup'
 import Aged from './../lottieFiles/Aged.json'
 import Supervisor from './../lottieFiles/Supervisor.json'
 import {useNavigation} from '@react-navigation/native'
+
 const Signup = ({navigation}:any) =>{
+
+
+    
     
     const animationRef = React.useRef<Lottie>(null)
 

@@ -3,8 +3,10 @@ import { createStackNavigator } from '@react-navigation/stack'
 import { NavigationContainer } from '@react-navigation/native'
 import * as Screens from './src/screens'
 const Stack = createStackNavigator()
+import {Footer} from './src/components'
 const App = () =>{
   //create stack 
+
   return (
     <NavigationContainer >
       <Stack.Navigator 
@@ -67,6 +69,8 @@ const App = () =>{
             }}
           />
       </Stack.Navigator>
+
+      <Footer/>
     </NavigationContainer>
   )
 }
