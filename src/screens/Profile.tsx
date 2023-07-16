@@ -189,6 +189,11 @@ const Profile = ({navigation}:any) =>{
             <SideMenu
                 Display={menu}  
                 Hide={setMenu}
+                OnLogOut={
+                    ()=>{
+                        navigation.navigate("Signin")
+                    }
+                }
                 />
             <Footer/>
         </Native.View>

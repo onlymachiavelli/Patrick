@@ -1,8 +1,10 @@
 import * as React from 'react';
-import { View, Text, TouchableOpacity, Dimensions } from 'react-native';
+import { View, Text, TouchableOpacity, Dimensions ,ToastAndroid} from 'react-native';
 import { sidemenu } from './../styles';
 import { AntDesign, FontAwesome } from '@expo/vector-icons';
 const {height} = Dimensions.get("screen")
+import { AsyncStorage } from '../hooks'
+
 
 const SideMenu = ({ ...props }) => {
   return (
@@ -85,7 +87,12 @@ const SideMenu = ({ ...props }) => {
 
 
       </View>
-        <TouchableOpacity style={sidemenu.logOut}>
+        <TouchableOpacity style={sidemenu.logOut} onPress={()=>{
+            AsyncStorage.SetOne("token", "")
+            props.Hide("none")
+            ToastAndroid.show("LogOut Successfully", ToastAndroid.SHORT)
+            props.OnLogOut()
+        }}>
         <AntDesign name="logout" size={24} color="white" />
 
             <Text
