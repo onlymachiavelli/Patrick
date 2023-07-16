@@ -10,7 +10,7 @@ const App = () =>{
   return (
     <NavigationContainer >
       <Stack.Navigator 
-        initialRouteName="Tester"
+        initialRouteName="HeartStatus"
       >
         
           <Stack.Screen 
@@ -70,7 +70,7 @@ const App = () =>{
           />
       </Stack.Navigator>
 
-      <Footer/>
+      
     </NavigationContainer>
   )
 }

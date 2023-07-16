@@ -178,7 +178,7 @@ const Profile = ({navigation}:any) =>{
         />
       </Native.View>
 
-      
+            <Footer/>
         </Native.View>
     )
 }

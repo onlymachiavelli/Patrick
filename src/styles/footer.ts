@@ -8,7 +8,7 @@ const footer = StyleSheet.create({
     width:"90%" ,
     padding :6,  
     position : "absolute" , 
-    bottom : 15,
+    bottom : 70,
     alignSelf:"center",
     borderRadius:100,
     display :"flex" , 
