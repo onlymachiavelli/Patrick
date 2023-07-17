@@ -5,4 +5,5 @@ import InfoCard from "./InfoCard"
 import Footer  from "./Footer"
 import ProfileHeader from "./ProfileHeader"
 import SideMenu from "./sideBar"
-export {Header, Input, SmallInp, InfoCard, Footer, ProfileHeader, SideMenu}
+import SearchBox from "./Search"
+export {Header, Input, SmallInp, InfoCard, Footer, ProfileHeader, SideMenu, SearchBox}

@@ -1,5 +1,4 @@
 import * as AsyncStorage from "./AsyncStorage"
-
-
-
-export {AsyncStorage}
+import useGetData from "./useGetDetails"
+import useMedical from "./useMedical"
+export {AsyncStorage, useGetData, useMedical}

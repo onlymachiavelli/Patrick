@@ -59,9 +59,20 @@ const App = () =>{
             }}
           />
 
-      <Stack.Screen 
+<Stack.Screen 
             name="HeartStatus"
             component={Screens.HeartStatus}
+
+            //remove the header 
+            options={{
+              headerShown: false
+            }}
+          />
+
+
+      <Stack.Screen 
+            name="MedicalInfo"
+            component={Screens.MedicalInfo}
 
             //remove the header 
             options={{

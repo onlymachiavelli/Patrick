@@ -29,6 +29,7 @@ const Profile = ({navigation}:any) =>{
     }
     const animationRef = React.useRef(null)
     const [menu, setMenu] = React.useState("none")
+    
     return (
         <Native.View style={profile.container}>
                 
@@ -196,6 +197,9 @@ const Profile = ({navigation}:any) =>{
                         navigation.navigate("Signin")
                     }
                 }
+                ToMedical={()=>{
+                    navigation.navigate("MedicalInfo")
+                }}
                 />
             <Footer/>
         </Native.View>

@@ -143,21 +143,7 @@ const Signup = ({navigation}:any) =>{
         <Native.ScrollView style={signup.container}>
             <Header/>
 
-            {
-                /*
-                
-                    <Native.View style={signup.logoContainer}>
-                <Lottie 
-                    source={Lotti}
-                    autoPlay
-                    loop
-                    style={signup.logo}
-                    ref={animationRef}
-            />
-
-            </Native.View>
-                */
-            }
+            
 
 
             <Native.Text style={

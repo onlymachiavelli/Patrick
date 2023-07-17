@@ -32,7 +32,9 @@ const ProfileHeader = ({...props} ) =>{
                     props.ToProfile()
                 }}>
                 <Native.Text style={profileHeader.nameTxt}>
-                    Alaa Eddine Barka
+                    {
+                        props.Name ? props.Name :"Loading Name"
+                    }
                 </Native.Text>
                 </Native.TouchableOpacity>
             </Native.View>

@@ -4,6 +4,7 @@ import { sidemenu } from './../styles';
 import { AntDesign, FontAwesome } from '@expo/vector-icons';
 const {height} = Dimensions.get("screen")
 import { AsyncStorage } from '../hooks'
+import {MedicalInfo} from './../screens'
 
 
 const SideMenu = ({ ...props }) => {
@@ -54,7 +55,10 @@ const SideMenu = ({ ...props }) => {
           </Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={sidemenu.button}>
+        <TouchableOpacity style={sidemenu.button} onPress={()=>{
+          props.Hide("none")
+          props.ToMedical()
+        }}>
         <FontAwesome name="medkit" size={25} color="white" />
           <Text style={sidemenu.buttonText}>
              {"     "}Medical Information

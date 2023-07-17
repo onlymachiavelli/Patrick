@@ -8,7 +8,19 @@ import Lotti from './../lottieFiles/logo.json'
 import { Header,Input } from './../components/index'
 import {User} from './../components/svg'
 import useSignin from '../hooks/useSignin'
+import { AsyncStorage } from '../hooks'
 const SignIn = ({navigation} : any) =>{
+
+    
+
+    React.useEffect(()=>{
+
+        AsyncStorage.GetOne("token").then(res=>{
+            if (res) {
+                navigation.navigate("Profile")
+            }
+        })
+    },[])
     const {
         Login,
        email,  password, 
