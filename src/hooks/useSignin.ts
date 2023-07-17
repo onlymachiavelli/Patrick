@@ -54,15 +54,9 @@ const useSignin = (navigation:any) =>{
 
     return {
         Login,
-       email,  password, 
-        
-    
+        email,  password, 
         setEmail,
-
         setPassword
-
-
-       
     }
 }
 
