@@ -79,6 +79,18 @@ const App = () =>{
               headerShown: false
             }}
           />
+
+
+
+<Stack.Screen 
+            name="Scanner"
+            component={Screens.Scanner}
+
+            //remove the header 
+            options={{
+              headerShown: false
+            }}
+          />
       </Stack.Navigator>
 
       

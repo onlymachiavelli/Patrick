@@ -1,5 +1,13 @@
 {
   "expo": {
+    "plugins": [
+      [
+        "expo-barcode-scanner",
+        {
+          "cameraPermission": "Allow VegaCare App to access Camera."
+        }
+      ]
+    ],
     "name": "VegaCare",
     "slug": "VegaCare",
     "version": "1.0.0",
