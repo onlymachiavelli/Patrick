@@ -4,9 +4,11 @@ import {Header} from './../components/'
 import { profile } from '../styles'
 import Lottie from 'lottie-react-native'
 import Male from './../lottieFiles/Male.json'
+
 import {InfoCard, Footer, SideMenu} from './../components'
 import { LinearGradient } from 'expo-linear-gradient'
 import Logo from './../lottieFiles/logo.json'
+import Female from './../lottieFiles/Female.json'
 import {AntDesign, Entypo,FontAwesome, Feather ,MaterialCommunityIcons ,FontAwesome5   } from '@expo/vector-icons'
 import useGetMe from '../hooks/useGetme'
 
@@ -43,7 +45,7 @@ const Profile = ({navigation}:any) =>{
             <Native.View style={profile.profileBorder}>
                 <Lottie
                     
-                    source={Male}
+                    source={user ? (user.user.gender === "female" ? Female : Male) : Male}
                     loop
                     autoPlay
                     style={{
