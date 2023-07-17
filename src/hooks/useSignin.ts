@@ -17,7 +17,6 @@ const useSignin = (navigation:any) =>{
         }
         //check the data before sending the request, 
         //do it later, 
-        console.log(body)
          const ip : any = await AsyncStorage.GetOne("ip")
         axios.post(`http://${ip}:3000/users/login` , body).then((res)=>{
             console.log(res)

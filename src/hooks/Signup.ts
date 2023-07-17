@@ -40,7 +40,6 @@ const useSignUp = (navigation : any) =>{
             type : type,
             password : password
         }
-        console.log(body)
         //add a code to check the content of the data 
 
         const ip : any = await AsyncStorage.GetOne("ip")
