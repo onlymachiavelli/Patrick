@@ -198,7 +198,7 @@ const Profile = ({navigation}:any) =>{
                     }
                 }
                 ToMedical={()=>{
-                    navigation.navigate("MedicalInfo")
+                    navigation.navigate("ConsultMedical")
                 }}
                 />
             <Footer/>

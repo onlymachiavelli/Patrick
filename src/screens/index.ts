@@ -6,5 +6,5 @@ import Profile from './Profile'
 import HeartStatus from './HeartStatus'
 import MedicalInfo from './MedicalInfo'
 import Scanner from './Scanner'
-
-export {SignIn, Tester, Signup, Happy, Profile, HeartStatus, MedicalInfo, Scanner}
+import ConsultMedical from './ConsultMedical'
+export {SignIn, Tester, Signup, Happy, Profile, HeartStatus, MedicalInfo, Scanner, ConsultMedical}
