@@ -90,6 +90,8 @@ const ConsultMedical = ({navigation}:any) =>{
                     navigation.navigate("Profile")
                 }}
                 Name={user ? user.user.fullname : "Loading"}
+                Gender={user ? user.user.gender : "Loading"}
+                
 
             />
             <Native.ScrollView style={{
@@ -191,7 +193,7 @@ const ConsultMedical = ({navigation}:any) =>{
                         >
 
                             <Native.Text style={{color:"#fff"}}>
-                                {data.title}
+                                {data ? data.title :"loading..."}
                             </Native.Text>
                         </Native.TouchableOpacity>
                     )
@@ -249,7 +251,7 @@ const ConsultMedical = ({navigation}:any) =>{
                         >
 
                             <Native.Text style={{color:"#fff"}}>
-                                {data.title}
+                            {data ? data.title :"loading..."}
                             </Native.Text>
                         </Native.TouchableOpacity>
                     )
@@ -304,7 +306,7 @@ const ConsultMedical = ({navigation}:any) =>{
                         >
 
                             <Native.Text style={{color:"#fff",}}>
-                                {data.title}
+                            {data ? data.title :"loading..."}
                             </Native.Text>
                         </Native.TouchableOpacity>
                     )

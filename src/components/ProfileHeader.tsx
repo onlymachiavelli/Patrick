@@ -5,6 +5,7 @@ import * as Native from 'react-native'
 import { profile, profileHeader } from './../styles/'
 import Lottie from 'lottie-react-native'
 import Man from './../lottieFiles/Male.json'
+import Female from './../lottieFiles/Female.json'
 import { Entypo } from '@expo/vector-icons'
 const ProfileHeader = ({...props} ) =>{
     //create animation ref 
@@ -17,7 +18,7 @@ const ProfileHeader = ({...props} ) =>{
                 }}>
                     <Lottie
                         style={profileHeader.profilePic}
-                        source={Man} 
+                        source={props.Gender ? (props.Gender ==="male" ? Man : Female) : Female} 
                         ref={animationRef}
                         loop 
                         autoPlay 

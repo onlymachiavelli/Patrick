@@ -91,6 +91,8 @@ const MedicalInfo = ({navigation}:any) =>{
                     navigation.navigate("Profile")
                 }}
                 Name={user ? user.user.fullname : "Loading"}
+                Gender={user ? user.user.gender : "Loading"}
+
 
             />
             <Native.ScrollView style={{

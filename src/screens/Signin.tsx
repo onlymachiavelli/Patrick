@@ -5,12 +5,12 @@ import {signin} from './../styles'
 import Lottie from 'lottie-react-native'
 
 import Lotti from './../lottieFiles/logo.json'
-import { Header,Input } from './../components/index'
+import { Header,Input, Loading } from './../components/index'
 import {User} from './../components/svg'
 import useSignin from '../hooks/useSignin'
 import { AsyncStorage } from '../hooks'
 const SignIn = ({navigation} : any) =>{
-
+    const [loader, setLoader] = React.useState(false)
     
 
     React.useEffect(()=>{
@@ -28,7 +28,8 @@ const SignIn = ({navigation} : any) =>{
     
         setEmail,
 
-        setPassword
+        setPassword,
+        result
 
 
        
@@ -88,7 +89,16 @@ const SignIn = ({navigation} : any) =>{
                 <Native.TouchableOpacity
                     style={signin.button}
                     onPress={()=>{
+
+                        //stay open for 1.5 sc 
+                        setLoader(true)
+                        setTimeout(()=>{setLoader(false)}, 3000)
+
+
+
                         Login()
+                        
+                        
                     }}
 
                 >
@@ -103,7 +113,9 @@ const SignIn = ({navigation} : any) =>{
 
 
                         
-            <Native.TouchableOpacity style={signin.restore} >
+            <Native.TouchableOpacity style={signin.restore} 
+                onPress={()=>{setLoader(true)}}
+            >
                             <Native.Text style={{color:"#555",textDecorationLine:"underline"}}>
                             Forgot your Credentials ?
                             </Native.Text>
@@ -117,7 +129,11 @@ const SignIn = ({navigation} : any) =>{
                             Create a new Account
                             </Native.Text>
                         </Native.TouchableOpacity>
-
+                        <Loading
+                            Open={
+                                loader
+                            }
+                        />
                     
         </Native.ScrollView>
     )

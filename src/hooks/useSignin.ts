@@ -7,9 +7,10 @@ const useSignin = (navigation:any) =>{
     const [email , setEmail] = React.useState("")
     const [password, setPassword] = React.useState("")
    
-
-
+    
+    const [result, setResult] : any = React.useState()
     const Login = async () =>{
+        setResult()
         const body : any ={
        
             email : email,   
@@ -28,7 +29,11 @@ const useSignin = (navigation:any) =>{
                 )
                 setEmail("")
                 setPassword("")
+                
+                setResult(res.data)
                 navigation.navigate("Profile")
+
+
 
             }
             else {
@@ -36,6 +41,8 @@ const useSignin = (navigation:any) =>{
                     "Please Check your credentials", 
                     ToastAndroid.SHORT
                 )
+
+                setResult(res.data)
             }
             
             return res.data
@@ -46,6 +53,8 @@ const useSignin = (navigation:any) =>{
                 "Please Check your credentials", 
                 ToastAndroid.SHORT
             )
+            setResult(e.response)
+
             return e.response 
         })
     }   
@@ -56,7 +65,8 @@ const useSignin = (navigation:any) =>{
         Login,
         email,  password, 
         setEmail,
-        setPassword
+        setPassword,
+        result
     }
 }
 
