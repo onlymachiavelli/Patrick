@@ -345,7 +345,12 @@ const ConsultMedical = ({navigation}:any) =>{
                }
                Display={open}
             />
-               <Footer/>
+               <Footer
+                ToChat={()=>{
+
+                    navigation.navigate("Chat")
+                }}
+               />
         </Native.View>  
     )
 }

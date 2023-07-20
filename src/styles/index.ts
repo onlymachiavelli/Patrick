@@ -8,4 +8,5 @@ import heart from "./hrt"
 import profileHeader from "./profileheader"
 import sidemenu from "./sidemenu"
 import medicalinfo from "./medicalinfo"
-export {signin, components, signup, happy, profile, footer, heart, profileHeader, sidemenu, medicalinfo}
+import chatStyle from "./chat"
+export {signin, components, signup, happy, profile, footer, heart, profileHeader, sidemenu, medicalinfo, chatStyle}

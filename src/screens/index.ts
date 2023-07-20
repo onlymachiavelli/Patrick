@@ -7,4 +7,8 @@ import HeartStatus from './HeartStatus'
 import MedicalInfo from './MedicalInfo'
 import Scanner from './Scanner'
 import ConsultMedical from './ConsultMedical'
-export {SignIn, Tester, Signup, Happy, Profile, HeartStatus, MedicalInfo, Scanner, ConsultMedical}
+import Chat from './Conversation'
+import useGetMe from '../hooks/useGetme'
+import Restore from './ResotrePass'
+import Verify from './Verify'
+export {SignIn, Tester, Signup, Happy, Profile, HeartStatus, MedicalInfo, Scanner, ConsultMedical, Chat , useGetMe, Restore, Verify}

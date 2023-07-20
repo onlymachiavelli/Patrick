@@ -201,7 +201,7 @@ const Profile = ({navigation}:any) =>{
                     navigation.navigate("ConsultMedical")
                 }}
                 />
-            <Footer/>
+            
         </Native.View>
     )
 }

@@ -6,10 +6,15 @@ import Lottie from 'lottie-react-native'
 
 import Lotti from './../lottieFiles/logo.json'
 import { Header,Input, Loading } from './../components/index'
-import {User} from './../components/svg'
-import useSignin from '../hooks/useSignin'
 import { AsyncStorage } from '../hooks'
-const SignIn = ({navigation} : any) =>{
+import {useRestore} from './../hooks/'
+const Verify = ({navigation} : any) =>{
+
+    const {
+        email, setEmail, password, setPass,code, setCode,
+        Verify, 
+        Request
+    } = useRestore(navigation)
     const [loader, setLoader] = React.useState(false)
     
 
@@ -21,19 +26,7 @@ const SignIn = ({navigation} : any) =>{
             }
         })
     },[])
-    const {
-        Login,
-       email,  password, 
-        
     
-        setEmail,
-
-        setPassword,
-        result
-
-
-       
-    } = useSignin(navigation)
     const animationRef = React.useRef<Lottie>(null)
     return (
         <Native.ScrollView style={signin.container}>
@@ -54,34 +47,35 @@ const SignIn = ({navigation} : any) =>{
             <Native.Text style={
                 signin.title
             }>
-                Log in to your Vega Account
+                Enter the code from your Email
             </Native.Text>
 
             <Native.View>
 
-                <Input
-                Text={"Enter your email"}
+
+
+
+            <Input
+                Text={"Enter your Code"}
                 Type={
-                    "emailAddress"
+                    "text"
                 }
                 Secure={false}
-                Value={email}
-                OnChange={setEmail}
-
-
+                
+                Value={code}
+                OnChange={setCode}
 
                 />
 
-
-                <Input
-                Text={"Enter your password"}
+<Input
+                Text={"Enter your new Password"}
                 Type={
                     "password"
                 }
-                Secure={true}
+                Secure={false}
                 
                 Value={password}
-                OnChange={setPassword}
+                OnChange={setPass}
 
                 />
 
@@ -95,10 +89,8 @@ const SignIn = ({navigation} : any) =>{
                         setTimeout(()=>{setLoader(false)}, 3000)
 
 
+                        Verify()
 
-                        Login()
-                        
-                        
                     }}
 
                 >
@@ -106,25 +98,14 @@ const SignIn = ({navigation} : any) =>{
                     <Native.Text
                         style={signin.buttonText}
                     >
-                        Sign In
+                        Change Password
                     </Native.Text>  
                 </Native.TouchableOpacity>
             </Native.View>
 
 
                         
-            <Native.TouchableOpacity style={signin.restore} 
-                onPress={()=>{setLoader(true)}}
-            >
-                            <Native.Text style={{color:"#555",textDecorationLine:"underline"}}
-                            onPress={()=>{
-                            
-                                navigation.navigate("Restore")
-                            }}
-                            >
-                            Forgot your Credentials ?
-                            </Native.Text>
-                        </Native.TouchableOpacity>
+            
 
 
                         <Native.TouchableOpacity style={signin.restore} onPress={()=>{
@@ -144,4 +125,4 @@ const SignIn = ({navigation} : any) =>{
     )
 }
 
-export default SignIn
+export default Verify

@@ -28,7 +28,7 @@ const App = () =>{
             }}
           />
 
-<Stack.Screen 
+      <Stack.Screen 
             name="Signup"
             component={Screens.Signup}
 
@@ -96,6 +96,37 @@ const App = () =>{
 <Stack.Screen 
             name="ConsultMedical"
             component={Screens.ConsultMedical}
+
+            //remove the header 
+            options={{
+              headerShown: false
+            }}
+          />
+
+<Stack.Screen 
+            name="Chat"
+            component={Screens.Chat}
+
+            //remove the header 
+            options={{
+              headerShown: false
+            }}
+          />
+
+          
+<Stack.Screen 
+            name="Restore"
+            component={Screens.Restore}
+
+            //remove the header 
+            options={{
+              headerShown: false
+            }}
+          />
+
+<Stack.Screen 
+            name="Verify"
+            component={Screens.Verify}
 
             //remove the header 
             options={{

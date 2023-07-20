@@ -5,7 +5,7 @@ import {} from './../screens'
 import { LinearGradient } from 'expo-linear-gradient'
 import {footer} from '../styles'
 import { FontAwesome, AntDesign, FontAwesome5 ,Ionicons   } from '@expo/vector-icons'
-const Footer = ({navigation} : any) =>{
+const Footer = ({...props}) =>{
 
     
     return (
@@ -27,7 +27,9 @@ const Footer = ({navigation} : any) =>{
         </Native.TouchableOpacity>
         
 
-        <Native.TouchableOpacity>
+        <Native.TouchableOpacity onPress={()=>{
+            props.ToChat()
+        }}>
             <Native.Text>
                 <AntDesign name="wechat" size={28} color="white" />
             </Native.Text>

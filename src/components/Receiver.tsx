@@ -1,0 +1,24 @@
+import * as React from 'react'
+
+import * as Native from 'react-native'
+import { chatStyle } from '../styles'
+
+const Receiver = ({...props}) =>{
+
+    return (
+        <Native.View style={chatStyle.receiverContainer}>
+            <Native.View style={chatStyle.chatContainer}>
+                <Native.Text style={chatStyle.Text}>
+                Hello world
+                Hello world
+                Hello world
+                Hello world
+                Hello world
+                </Native.Text>
+            </Native.View>
+        </Native.View>
+    )
+}
+
+
+export default Receiver

@@ -7,4 +7,6 @@ import ProfileHeader from "./ProfileHeader"
 import SideMenu from "./sideBar"
 import SearchBox from "./Search"
 import Loading from "./Loading"
-export {Header, Input, SmallInp, InfoCard, Footer, ProfileHeader, SideMenu, SearchBox, Loading}
+import Sender from "./Sender"
+import Receiver from "./Receiver"
+export {Header, Input, SmallInp, InfoCard, Footer, ProfileHeader, SideMenu, SearchBox, Loading, Sender , Receiver}
