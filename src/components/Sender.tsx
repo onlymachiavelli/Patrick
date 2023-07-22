@@ -9,11 +9,9 @@ const Sender = ({...props}) =>{
         <Native.View style={chatStyle.senderContainer}>
             <Native.View style={chatStyle.chatContainer}>
                 <Native.Text style={chatStyle.Text}>
-                Hello world
-                Hello world
-                Hello world
-                Hello world
-                Hello world
+               {
+                props.message
+               }
                 </Native.Text>
             </Native.View>
         </Native.View>

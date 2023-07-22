@@ -18,7 +18,7 @@ const Chat = ({navigation} : any) =>{
   }, [])
 
   const  {
-    message , setMessage, SendAndReceive
+    message , setMessage, SendAndReceive,conversation, setConv
         } = useChatter()
     return (
         <Native.ScrollView style={chatStyle.container}>
@@ -41,49 +41,51 @@ const Chat = ({navigation} : any) =>{
                 borderBottomWidth:1, 
                 borderColor:"#ccc",
             }}>
-                <Sender/>
-                <Sender/>
-                <Receiver/>
-                <Receiver/>
-                <Sender/>
-                <Receiver/>
+                
+                
+                {
+                    conversation.map((item:any, index:any)=>{
+                        if(item.part === "user"){
+                            return (
+                              <Sender
+                                    key={index}
+                                    message={item.message}
+                                />
+                                
+                            )
+                        }else{
+                            return (
+                                
 
+                                <Receiver
+                                    key={index}
+                                    message={item.message}
+                                />
+                            )
+                        }
+                    }
+                
 
-                <Sender/>
-                <Sender/>
-                <Receiver/>
-                <Receiver/>
-                <Sender/>
-                <Receiver/>
-
-                <Sender/>
-                <Sender/>
-                <Receiver/>
-                <Receiver/>
-                <Sender/>
-                <Receiver/>
+              )
+              }
             </Native.ScrollView>
 
             <Native.View style={chatStyle.message}>
-                <Native.TextInput
+  <Native.TextInput
+    placeholder='Enter your message'
+    value={message}
+    onChange={(e)=>{
+      setMessage(e.nativeEvent.text)
+    }}
+    style={chatStyle.input}
+  />
+  <Native.TouchableOpacity style={chatStyle.sendbtn} onPress={async()=>{
+    await SendAndReceive()
+  }} >
+    <FontAwesome name="send" size={24} color="white" />
+  </Native.TouchableOpacity>
+</Native.View>
 
-                    placeholder='Enter your message'
-                    value={message}
-                    onChange={(e)=>{
-                        
-                        setMessage(e.nativeEvent.text)
-
-
-                    }}
-                    style={chatStyle.input}
-
-                    
-                />
-
-            <Native.TouchableOpacity style={chatStyle.sendbtn}>
-            <FontAwesome name="send" size={24} color="white" />
-            </Native.TouchableOpacity>
-            </Native.View>
 
             <SideMenu
             

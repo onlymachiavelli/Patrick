@@ -9,4 +9,5 @@ import profileHeader from "./profileheader"
 import sidemenu from "./sidemenu"
 import medicalinfo from "./medicalinfo"
 import chatStyle from "./chat"
-export {signin, components, signup, happy, profile, footer, heart, profileHeader, sidemenu, medicalinfo, chatStyle}
+import community from "./community"
+export {signin, components, signup, happy, profile, footer, heart, profileHeader, sidemenu, medicalinfo, chatStyle, community}

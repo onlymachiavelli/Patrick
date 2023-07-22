@@ -39,6 +39,11 @@ const Footer = ({...props}) =>{
             style={
                 footer.device
             }
+
+            onPress={()=>{
+            
+                props.ToDevice()
+            }}
         >
             <Native.Text>
                 <FontAwesome5 name="socks" size={28} color="white" />

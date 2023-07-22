@@ -350,6 +350,14 @@ const ConsultMedical = ({navigation}:any) =>{
 
                     navigation.navigate("Chat")
                 }}
+
+                ToDevice={
+                    ()=>{
+                    
+                        navigation.navigate("Scanner")
+                    }
+                }
+                To
                />
         </Native.View>  
     )
