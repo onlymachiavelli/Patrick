@@ -7,8 +7,8 @@ const Receiver = ({...props}) =>{
 
     return (
         <Native.View style={chatStyle.receiverContainer}>
-            <Native.View style={chatStyle.chatContainer}>
-                <Native.Text style={chatStyle.Text}>
+            <Native.View style={chatStyle.recChat}>
+                <Native.Text style={chatStyle.recTxt}>
                     {
                         props.message
                     }
@@ -19,4 +19,4 @@ const Receiver = ({...props}) =>{
 }
 
 
-export default Receiver
+export default Receiver 

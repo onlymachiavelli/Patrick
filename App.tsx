@@ -10,7 +10,7 @@ const App = () =>{
   return (
     <NavigationContainer >
       <Stack.Navigator 
-        initialRouteName="Tester"
+        initialRouteName="Chat"
       >
         
           <Stack.Screen 

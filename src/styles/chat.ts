@@ -82,8 +82,8 @@ const chatStyle= StyleSheet.create({
         borderColor:"#555",
     },
     sendbtn:{
-        width:50,
-        height:50,
+        width:45,
+        height:45,
         borderRadius:100,       
         display :"flex" ,
         alignItems:"center",
@@ -98,9 +98,53 @@ const chatStyle= StyleSheet.create({
         shadowOpacity: 0.5,
         shadowRadius: 6,
         
+    },
+    recChat :{
+        maxWidth:"70%" , 
+        height :"auto" , 
+        backgroundColor:"#3c71bb",
+        borderRadius:100,
+        display : "flex" , 
+        alignItems:"center" , 
+        justifyContent:"center",
+        padding : 10
+    }
+    ,
+    recTxt :{
+            padding : 10,
+            color:"#fff"
     }
 
-    
+    ,
+    block : {
+        width : "90%",
+        padding : 5, 
+        alignSelf:"center",
+        display :"flex" , 
+        alignItems:"center", 
+        justifyContent:"center",
+        borderWidth : 0.5,
+        borderColor:"#555",
+        borderRadius:100,
+        //shadow 
+        shadowColor: "#000",
+        shadowOffset: {
+        width: 0,
+        height: 0.5,
+        },
+        shadowOpacity: 0.5,
+        shadowRadius: 6,
+        flexDirection:"row",
+        marginTop:20
+
+
+
+    },
+    inp:{
+        width : "85%",
+        paddingLeft:5,
+        
+    }
 })
 
 export default chatStyle

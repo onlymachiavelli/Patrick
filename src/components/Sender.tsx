@@ -15,7 +15,7 @@ const Sender = ({...props}) =>{
                 </Native.Text>
             </Native.View>
         </Native.View>
-    )
+    ) 
 }
 
 

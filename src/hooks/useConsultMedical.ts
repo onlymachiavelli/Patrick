@@ -11,6 +11,8 @@ const useConsult = (navigation:any) =>{
     const [glucose, setGlucose] = React.useState("")
     const [blood, setBlood] = React.useState("")
 
+    const [all, setAll] :any= React.useState()
+
     //conditions
     
     const [conditions, setConditions] : any = React.useState([])
@@ -34,15 +36,16 @@ const useConsult = (navigation:any) =>{
                 setConditions(res.data.conditions)
                 setAllergies(res.data.allergies)
                 setMedications(res.data.medications)
-                console.log(res.data.blood_type)
-
+                setAll(res.data)
             }
-        ).catch(e=>{
-            console.log(e)
-            console.log(e.response)
-        })
+            
+            ).catch(e=>{
+                console.log(e)
+                console.log(e.response)
+            })
+            
+        }
         
-    }
     return {
         weight, height, glucose, blood,
 
@@ -50,7 +53,8 @@ const useConsult = (navigation:any) =>{
         ,
 
 
-        conditions, allergies, medications
+        conditions, allergies, medications, 
+        all, setAll
     }
 }
 

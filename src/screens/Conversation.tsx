@@ -8,18 +8,39 @@ import { Dimensions } from 'react-native'
 import { FontAwesome } from '@expo/vector-icons'
 import useGetMe from '../hooks/useGetme'
 import useChatter from '../hooks/contactor'
+import { useConsult } from '../hooks'
 const Chat = ({navigation} : any) =>{
     const screenHeight = Native.Dimensions.get('window').height
   const scrollViewHeight = screenHeight * 0.8
     const [open, setOpen] = React.useState(false)
   const {user, GetMe} = useGetMe(navigation)
+  const scrollViewRef = React.useRef<Native.ScrollView>(null)
+
+  const {all, setAll, GetData} = useConsult(navigation)
   React.useEffect(()=>{
         GetMe()
+
+        GetData()
+
+        
   }, [])
+
+  
 
   const  {
     message , setMessage, SendAndReceive,conversation, setConv
-        } = useChatter()
+        } = useChatter(all)
+
+        if (all) {
+          console.log( "this is all", all)
+        }
+
+        React.useEffect(() => {
+          // Automatically scroll to the bottom whenever the conversation is updated
+          if (scrollViewRef.current) {
+            scrollViewRef.current.scrollToEnd({ animated: true });
+          }
+        }, [conversation])
     return (
         <Native.ScrollView style={chatStyle.container}>
              <ProfileHeader
@@ -40,9 +61,12 @@ const Chat = ({navigation} : any) =>{
                 height: scrollViewHeight,
                 borderBottomWidth:1, 
                 borderColor:"#ccc",
-            }}>
                 
+            }}
+            
+            ref={scrollViewRef}>
                 
+                 
                 {
                     conversation.map((item:any, index:any)=>{
                         if(item.part === "user"){
@@ -70,7 +94,9 @@ const Chat = ({navigation} : any) =>{
               }
             </Native.ScrollView>
 
-            <Native.View style={chatStyle.message}>
+            {
+              /*
+              <Native.View style={chatStyle.message}>
   <Native.TextInput
     placeholder='Enter your message'
     value={message}
@@ -85,6 +111,26 @@ const Chat = ({navigation} : any) =>{
     <FontAwesome name="send" size={24} color="white" />
   </Native.TouchableOpacity>
 </Native.View>
+              */
+            }
+
+            <Native.View style={chatStyle.block}>
+              <Native.TextInput
+                placeholder='Enter your message here'
+                style={chatStyle.inp}
+                value={message}
+                onChange={(e)=>{
+                  setMessage(e.nativeEvent.text)
+                }}
+              />
+              <Native.TouchableOpacity style={chatStyle.sendbtn} onPress={async()=>{
+              await SendAndReceive()
+            }} >
+              <FontAwesome name="send" size={18} color="white" />
+            </Native.TouchableOpacity>
+            </Native.View>
+
+          <Native.View></Native.View>
 
 
             <SideMenu
