@@ -5,7 +5,7 @@ import { profile } from '../styles'
 import Lottie from 'lottie-react-native'
 import Male from './../lottieFiles/Male.json'
 
-import {InfoCard, Footer, SideMenu} from './../components'
+import {InfoCard, Footer, SideMenu, } from './../components'
 import { LinearGradient } from 'expo-linear-gradient'
 import Logo from './../lottieFiles/logo.json'
 import Female from './../lottieFiles/Female.json'
@@ -187,7 +187,7 @@ const Profile = ({navigation}:any) =>{
                 ref={animationRef}
         />
       </Native.View>
-            
+            <Footer/>
 
             <SideMenu
                 Display={menu}  

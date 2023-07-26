@@ -4,6 +4,5 @@ import useMedical from "./useMedical"
 import useConsult from "./useConsultMedical"
 import useGetMe from "./useGetme"
 import useRestore from "./useRestore"
-
-
-export {AsyncStorage, useGetData, useMedical, useConsult, useRestore, useGetMe}
+import useRelations from "./useRelations"
+export {AsyncStorage, useGetData, useMedical, useConsult, useRestore, useGetMe, useRelations}

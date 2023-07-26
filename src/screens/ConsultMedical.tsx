@@ -95,7 +95,7 @@ const ConsultMedical = ({navigation}:any) =>{
 
             />
             <Native.ScrollView style={{
-                maxHeight:"72%",
+                maxHeight:"78%",
                 width:"100%"
             }}>
     <Native.View>

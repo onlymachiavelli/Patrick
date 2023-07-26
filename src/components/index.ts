@@ -9,4 +9,7 @@ import SearchBox from "./Search"
 import Loading from "./Loading"
 import Sender from "./Sender"
 import Receiver from "./Receiver"
-export {Header, Input, SmallInp, InfoCard, Footer, ProfileHeader, SideMenu, SearchBox, Loading, Sender , Receiver}
+import AddSuper from "./AddSuperVisor"
+import Supervisors from "./supList"
+import Patients from "./patients"
+export {Header, Input, SmallInp, InfoCard, Footer, ProfileHeader, SideMenu, SearchBox, Loading, Sender , Receiver, AddSuper, Supervisors, Patients}

@@ -5,12 +5,11 @@ const footer = StyleSheet.create({
     
 
     container : {
-    width:"90%" ,
+    width:"100%" ,
     padding :6,  
     position : "absolute" , 
-    bottom : 70,
+    bottom : 48,
     alignSelf:"center",
-    borderRadius:100,
     display :"flex" , 
     flexDirection : "row" ,
     justifyContent : "space-around" ,

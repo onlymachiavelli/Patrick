@@ -10,7 +10,7 @@ const App = () =>{
   return (
     <NavigationContainer >
       <Stack.Navigator 
-        initialRouteName="Chat"
+        initialRouteName="Relations"
       >
         
           <Stack.Screen 
@@ -127,6 +127,16 @@ const App = () =>{
 <Stack.Screen 
             name="Verify"
             component={Screens.Verify}
+
+            //remove the header 
+            options={{
+              headerShown: false
+            }}
+          />
+
+<Stack.Screen 
+            name="Relations"
+            component={Screens.Relations}
 
             //remove the header 
             options={{

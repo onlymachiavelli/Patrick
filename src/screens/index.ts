@@ -11,5 +11,6 @@ import Chat from './Conversation'
 import useGetMe from '../hooks/useGetme'
 import Restore from './ResotrePass'
 import Verify from './Verify'
+import Relations from './Relations'
 
-export {SignIn, Tester, Signup, Happy, Profile, HeartStatus, MedicalInfo, Scanner, ConsultMedical, Chat , useGetMe, Restore, Verify}
+export {SignIn, Tester, Signup, Happy, Profile, HeartStatus, MedicalInfo, Scanner, ConsultMedical, Chat , useGetMe, Restore, Verify, Relations}
