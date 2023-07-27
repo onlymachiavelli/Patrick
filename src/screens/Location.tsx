@@ -5,7 +5,7 @@ import { Map } from '../components'
 const Location = ()=>{
     return (
         <Native.View>
-
+            <Map/>
         </Native.View>
     )
 }
