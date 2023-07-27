@@ -6,7 +6,7 @@ import { relationsStyle } from '../styles'
 import Male from './../lottieFiles/Male.json'
 import Female from './../lottieFiles/Female.json'
 import Lottie from 'lottie-react-native'
-
+import {AddSuper} from './../components'
 import {Input} from './'
 
 const Supervisors = () =>{
@@ -18,6 +18,8 @@ const Supervisors = () =>{
             <Native.Text style={relationsStyle.title}>
                 My SuperVisors
             </Native.Text>
+            <AddSuper/>
+
 
             <Native.View style={relationsStyle.card}>
                 <Native.View style={

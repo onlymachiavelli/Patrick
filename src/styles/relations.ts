@@ -10,7 +10,7 @@ const relationsStyle = StyleSheet.create({
 
     addsuper:{
         width :"100%",
-        height : "70%",
+        height : "60%",
         display :"flex",
         alignItems:"center" , 
         justifyContent:"center"
