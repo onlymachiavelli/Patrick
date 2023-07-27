@@ -200,6 +200,10 @@ const Profile = ({navigation}:any) =>{
                 ToMedical={()=>{
                     navigation.navigate("ConsultMedical")
                 }}
+
+                ToRelation={()=>{
+                    navigation.navigate("Relations")
+                }}
                 />
             
         </Native.View>
