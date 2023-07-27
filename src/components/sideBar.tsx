@@ -78,12 +78,24 @@ const SideMenu = ({ ...props }) => {
           </Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={sidemenu.button}>
+        <TouchableOpacity style={sidemenu.button} >
             
                 <FontAwesome name="info-circle" size={25} color="white" />
              
           <Text style={sidemenu.buttonText}>
           {"     "}About VegaTeam
+          </Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity style={sidemenu.button}onPress={()=>{
+          props.Hide("none")
+          props.ToRelation()
+        }}>
+            
+                <FontAwesome name="info-circle" size={25} color="white" />
+             
+          <Text style={sidemenu.buttonText}>
+          {"     "}Add emergency contact
           </Text>
         </TouchableOpacity>
 
