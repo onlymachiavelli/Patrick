@@ -4,8 +4,8 @@ import MapView, { Marker } from 'react-native-maps'
 
 const { height } = Native.Dimensions.get('screen')
 
-const latitude = 36.5072
-const longitude = 8.7757
+const latitude = 35.7072
+const longitude = 9.7757
 const CustomMarker = () => (
   <Native.Image
     source={{ uri: 'https://upload.wikimedia.org/wikipedia/en/c/c2/Peter_Griffin.png' }}
@@ -27,8 +27,13 @@ const Map = ({ ...props }) => {
           width: '100%',
           height: '100%',
         }}
+
+
       >
-        <Marker coordinate={{ latitude: latitude, longitude: longitude }} >
+        <Marker coordinate={{ latitude: latitude, longitude: longitude }}
+            title='Hey' 
+            description='Shut up Meg'
+        >
           <CustomMarker />
         </Marker>
       </MapView>
