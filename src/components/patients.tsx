@@ -7,6 +7,7 @@ import Male from './../lottieFiles/Male.json'
 import Female from './../lottieFiles/Female.json'
 import Lottie from 'lottie-react-native'
 
+import {AddSuper} from './../components'
 import {Input} from './'
 
 const Patients = () =>{
@@ -18,6 +19,7 @@ const Patients = () =>{
             <Native.Text style={relationsStyle.title}>
                 My Patients
             </Native.Text>
+            
 
             <Native.View style={relationsStyle.card}>
                 <Native.View style={
