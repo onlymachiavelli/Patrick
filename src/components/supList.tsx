@@ -41,7 +41,7 @@ const Supervisors = () =>{
                     />
 
                     <Native.Text style={relationsStyle.name}>
-                    Alaa Eddine Barka
+                        Alaa Eddine Barka
                     </Native.Text>
 
                 </Native.View>
