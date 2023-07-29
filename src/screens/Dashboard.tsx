@@ -1,10 +1,10 @@
-import * as React from 'react';
-import { View, Text, ScrollView, Dimensions } from 'react-native'; // Import ScrollView from 'react-native'
+import * as React from 'react'
+import { View, Text, ScrollView, Dimensions } from 'react-native'
 import * as Native from 'react-native'
-import { ProfileHeader, Footer, SideMenu } from '../components';
-import { useGetMe } from '../hooks';
-import Graph from '../components/Graph';
-
+import { ProfileHeader, Footer, SideMenu } from '../components'
+import { useGetMe } from '../hooks'
+import Graph from '../components/Graph'
+import MapView from 'react-native-maps'
 const { height } = Dimensions.get("screen");
 
 const Dashboard = ({ navigation }: any) => {
@@ -12,8 +12,8 @@ const Dashboard = ({ navigation }: any) => {
   const [open, setOpen] = React.useState(false);
 
   React.useEffect(() => {
-    GetMe();
-  }, []);
+    GetMe()
+  }, [])
 
   return (
     <View style={{ width: "100%", maxHeight:height,height:height, backgroundColor: "white" }}>
@@ -28,7 +28,7 @@ const Dashboard = ({ navigation }: any) => {
       />
 
       {/* Replace Native._ScrollView with ScrollView */}
-      <ScrollView style={{ width: "100%", flex: 1 ,height:300 }}>
+      <ScrollView style={{ width: "100%" ,maxHeight:"70%" ,  backgroundColor:"red" }}>
         <View style={{
           width: "90%",
           height: "auto",
@@ -138,8 +138,35 @@ const Dashboard = ({ navigation }: any) => {
     </Native.View>
 
       </ScrollView>
+      <Footer
+                ToChat={()=>{
 
+                    navigation.navigate("Chat")
+                }}
+
+                ToDevice={
+                    ()=>{
+                    
+                        navigation.navigate("Scanner")
+                    }
+                }
+
+                ToRelations={()=>{
+                    navigation.navigate("Relations")
+                }}
+
+
+                ToHome={
+                    ()=>{
+                        navigation.navigate("Dashboard")
+                    }
+                }
+
+                
+               />
       <SideMenu Hide={setOpen} Display={open} />
+
+      
     </View>
   );
 };

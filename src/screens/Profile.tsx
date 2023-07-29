@@ -35,10 +35,8 @@ const Profile = ({navigation}:any) =>{
                 
             <LinearGradient
             style={profile.cov}
-        // Background Linear Gradient
         colors={['#87CEEB', '#1E90FF']}
 
-        //degree 45degree 
         start={{ x: 0, y: 0 }}
       >
       
