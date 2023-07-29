@@ -5,7 +5,7 @@ import { profile } from '../styles'
 import Lottie from 'lottie-react-native'
 import Male from './../lottieFiles/Male.json'
 
-import {InfoCard, Footer, SideMenu, } from './../components'
+import {InfoCard, Footer, SideMenu,Loading } from './../components'
 import { LinearGradient } from 'expo-linear-gradient'
 import Logo from './../lottieFiles/logo.json'
 import Female from './../lottieFiles/Female.json'
@@ -30,7 +30,7 @@ const Profile = ({navigation}:any) =>{
     const animationRef = React.useRef(null)
     const [menu, setMenu] = React.useState("none")
     
-    return (
+    return !user ? (<Loading Open={true}/>) : (
         <Native.View style={profile.container}>
                 
             <LinearGradient
