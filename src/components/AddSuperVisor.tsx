@@ -1,6 +1,7 @@
 
 import * as Native from 'react-native'
 import { relationsStyle } from '../styles'
+import { useGetMe, useRelations } from '../hooks'
 
 
 import {Input} from './'
@@ -8,20 +9,40 @@ import {Input} from './'
 
 
 const AddSuper = ({...props}) =>{
+    const {name, setName, 
+        phone, setPhone,
+        SaveRelation,
+        AcceptOrRefuse,
+        GetRelations} = useRelations()
     return (
         <Native.View style={relationsStyle.addsuper}>
             <Native.Text style={relationsStyle.title}>Add a SuperVisor</Native.Text>
 
             <Input
-                Text={"Enter Name"}
+                Text={"Contact name"}
+                Type={
+                    "name"
+                }
+                Secure={false}
+                Value={name}
+                OnChange={setName}
             />
 
             <Input
-                Text={"Enter Phone Number"}
+                Text={"Contact phone number"}
+                Type={
+                    "telephoneNumber"
+                }
+                Secure={false}
+                Value={phone}
+                OnChange={setPhone}
                 Number={true}
             />
 
-            <Native.TouchableOpacity style={relationsStyle.addBtn}>
+            <Native.TouchableOpacity style={relationsStyle.addBtn} 
+                    onPress={()=>{
+                        SaveRelation(name, phone)
+                    }}>
                 <Native.Text style={{color:"white"}}>
                     Add To the DB
                 </Native.Text>

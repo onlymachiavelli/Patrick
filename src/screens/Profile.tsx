@@ -221,6 +221,14 @@ const Profile = ({navigation}:any) =>{
                 ToMedical={()=>{
                     navigation.navigate("ConsultMedical")
                 }}
+
+                ToRelation={()=>{
+                    navigation.navigate("Relations")
+                }}
+
+                ToLocation={()=>{
+                    navigation.navigate("Location")
+                }}
                 />
             
         </Native.View>
