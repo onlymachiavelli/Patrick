@@ -385,6 +385,23 @@ const MedicalInfo = ({navigation}:any) =>{
                      setOpen
                }
                Display={open}
+
+               OnLogOut={
+                ()=>{
+                    navigation.navigate("Signin")
+                }
+            }
+            ToMedical={()=>{
+                navigation.navigate("ConsultMedical")
+            }}
+
+            ToRelation={()=>{
+                navigation.navigate("Relations")
+            }}
+
+            ToLocation={()=>{
+                navigation.navigate("Location")
+            }}
             />
                <Footer
                 ToChat={()=>{

@@ -164,7 +164,24 @@ const Dashboard = ({ navigation }: any) => {
 
                 
                />
-      <SideMenu Hide={setOpen} Display={open} />
+      <SideMenu Hide={setOpen} Display={open} 
+        OnLogOut={
+          ()=>{
+              navigation.navigate("Signin")
+          }
+      }
+      ToMedical={()=>{
+          navigation.navigate("ConsultMedical")
+      }}
+
+      ToRelation={()=>{
+          navigation.navigate("Relations")
+      }}
+
+      ToLocation={()=>{
+          navigation.navigate("Location")
+      }}
+      />
 
       
     </View>
