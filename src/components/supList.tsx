@@ -35,11 +35,11 @@ const Supervisors = () =>{
                 My SuperVisors
             </Native.Text>
             {
-                [{fullname:"Bob",gender:"male"},
-                 {fullname:"Lola",gender:"female"},
-                 {fullname:"Micheal",gender:"male"},
-                 {fullname:"Yassine",gender:"male"},
-                 {fullname:"Jean",gender:"male"}
+                [{key:1,fullname:"Bob",gender:"male"},
+                 {key:2,fullname:"Lola",gender:"female"},
+                 {key:3,fullname:"Micheal",gender:"male"},
+                 {key:4,fullname:"Yassine",gender:"male"},
+                 {key:5,fullname:"Jean",gender:"male"}
                                             ].map((item : any)=> 
                                             <Native.View style={relationsStyle.card}>
                                                 

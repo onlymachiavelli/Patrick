@@ -1,15 +1,18 @@
 import * as React from 'react'
 import * as Native from 'react-native'
 import MapView, { Marker } from 'react-native-maps'
+import { AntDesign, FontAwesome } from '@expo/vector-icons';
 
 const { height } = Native.Dimensions.get('screen')
 
 const latitude = 35.7072
 const longitude = 9.7757
 const CustomMarker = () => (
+  //<FontAwesome name="map" size={25} color="white" />
+  
   <Native.Image
-    source={{ uri: 'https://upload.wikimedia.org/wikipedia/en/c/c2/Peter_Griffin.png' }}
-    style={{ width: 40, height: 80 }} 
+    source={{ uri: 'https://static.vecteezy.com/system/resources/previews/010/157/991/original/pin-location-icon-sign-symbol-design-free-png.png' }}
+    style={{ width: 25, height: 38,resizeMode: 'stretch', }} 
   />
 )
 

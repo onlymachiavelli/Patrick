@@ -204,6 +204,10 @@ const Profile = ({navigation}:any) =>{
                 ToRelation={()=>{
                     navigation.navigate("Relations")
                 }}
+
+                ToLocation={()=>{
+                    navigation.navigate("Location")
+                }}
                 />
             
         </Native.View>

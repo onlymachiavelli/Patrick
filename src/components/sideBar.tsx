@@ -65,6 +65,30 @@ const SideMenu = ({ ...props }) => {
           </Text>
         </TouchableOpacity>
 
+        <TouchableOpacity style={sidemenu.button}onPress={()=>{
+          props.Hide("none")
+          props.ToRelation()
+        }}>
+            
+                <FontAwesome name="id-card" size={25} color="white" />
+             
+          <Text style={sidemenu.buttonText}>
+          {"     "}Add emergency contact
+          </Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity style={sidemenu.button}onPress={()=>{
+          props.Hide("none")
+          props.ToLocation()
+        }}>
+            
+                <FontAwesome name="map" size={25} color="white" />
+             
+          <Text style={sidemenu.buttonText}>
+          {"     "}Location
+          </Text>
+        </TouchableOpacity>
+
         <TouchableOpacity style={sidemenu.button}>
         <FontAwesome name="file-text" size={25} color="white" />
           <Text style={sidemenu.buttonText}>
@@ -78,6 +102,7 @@ const SideMenu = ({ ...props }) => {
           </Text>
         </TouchableOpacity>
 
+
         <TouchableOpacity style={sidemenu.button} >
             
                 <FontAwesome name="info-circle" size={25} color="white" />
@@ -86,19 +111,6 @@ const SideMenu = ({ ...props }) => {
           {"     "}About VegaTeam
           </Text>
         </TouchableOpacity>
-
-        <TouchableOpacity style={sidemenu.button}onPress={()=>{
-          props.Hide("none")
-          props.ToRelation()
-        }}>
-            
-                <FontAwesome name="info-circle" size={25} color="white" />
-             
-          <Text style={sidemenu.buttonText}>
-          {"     "}Add emergency contact
-          </Text>
-        </TouchableOpacity>
-
 
 
 
