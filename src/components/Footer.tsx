@@ -19,7 +19,11 @@ const Footer = ({...props}) =>{
     >
 
 
-        <Native.TouchableOpacity>
+        <Native.TouchableOpacity 
+            onPress={()=>{
+                props.ToHome()
+            }}
+        >
             <Native.Text>
             <FontAwesome name="home" size={28} color="white" />
 
@@ -50,7 +54,11 @@ const Footer = ({...props}) =>{
             </Native.Text>
         </Native.TouchableOpacity>
 
-        <Native.TouchableOpacity>
+        <Native.TouchableOpacity
+            onPress={()=>{
+                props.ToRelations()
+            }}
+        >
              <Native.Text>
                 <Ionicons name="people" size={28} color="white" />
              </Native.Text>

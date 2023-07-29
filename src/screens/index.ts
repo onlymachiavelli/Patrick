@@ -14,4 +14,6 @@ import Verify from './Verify'
 import Relations from './Relations'
 import Location from './Location'
 
-export {SignIn, Tester, Signup, Happy, Profile, HeartStatus, MedicalInfo, Scanner, ConsultMedical, Chat , useGetMe, Restore, Verify, Relations, Location}
+import Dashboard from './Dashboard'
+import Heart from './Heart'
+export {SignIn, Tester, Signup, Happy, Profile, HeartStatus, MedicalInfo, Scanner, ConsultMedical, Chat , useGetMe, Restore, Verify, Relations, Location, Dashboard, Heart}

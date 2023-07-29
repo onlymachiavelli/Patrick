@@ -22,17 +22,15 @@ import { Dimensions } from "react-native"
 
 const screenWidth = Dimensions.get("window").width
 
-const Graph = () => {
+const Graph = ({...props}) => {
   
 
   const data = {
-    labels: [
-      "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15",
-    ],
+    labels: props.Labels,
     datasets: [
       {
         data: [3, 1, 4, 8, 10, 22, 5, 66, 77, 88, 20, 0, 22, 78, 120],
-        color: () => `red`, // optional (not needed since we have chartConfig)
+        color: () => props.Color, // optional (not needed since we have chartConfig)
         strokeWidth: 3, // optional
       },
     ],
@@ -44,9 +42,9 @@ const chartConfig = {
   backgroundGradientFromOpacity: 0,
   backgroundGradientTo: "transparent",
   backgroundGradientToOpacity: 0,
-  color: (opacity = 1) => `red`, // Use a constant color value // grid color 
-  strokeWidth: 3, // optional, default 3
-  barPercentage: 0.1,
+  color: (opacity = 1) => props.Color, // Use a constant color value // grid color 
+  strokeWidth: 0, // optional, default 3
+  barPercentage: 0.2,
   useShadowColorFromDataset: false, // optional
 }
 // ...
@@ -61,11 +59,10 @@ useEffect(() => {
 
   return (
       <View>
-        <Text style={styles.title}>Statistiques </Text>
         <View style={{}}>
           <ScrollView
             contentContainerStyle={{
-              paddingVertical: 10,
+              paddingVertical: 30,
               justifyContent: "center",
             }}
           >
@@ -84,13 +81,13 @@ useEffect(() => {
               <LineChart
                 data={data}
                 width={screenWidth * 0.975}
-                height={250}
+                height={80}
                 chartConfig={chartConfig}
                 withVerticalLabels={true}
                 withDots={false}
-                yLabelsOffset={5}
+                yLabelsOffset={2}
                 style={{
-                  borderRadius: 12,
+                  borderRadius: 7,
                   borderColor: "transparent",
                 }}
               />
@@ -112,7 +109,7 @@ const styles = StyleSheet.create({
   subContainer: {
     justifyContent: "space-around",
     borderRadius: 6.25,
-    width: "95%",
+    width: "10%",
     height: "95%",
   },
   title: {

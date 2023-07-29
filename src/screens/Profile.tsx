@@ -187,7 +187,30 @@ const Profile = ({navigation}:any) =>{
                 ref={animationRef}
         />
       </Native.View>
-            <Footer/>
+      <Footer
+                ToChat={()=>{
+
+                    navigation.navigate("Chat")
+                }}
+
+                ToDevice={
+                    ()=>{
+                    
+                        navigation.navigate("Scanner")
+                    }
+                }
+
+                ToRelations={()=>{
+                    navigation.navigate("Relations")
+                }}
+
+                ToHome={
+                    ()=>{
+                        navigation.navigate("Dashboard")
+                    }
+                }
+                
+               />
 
             <SideMenu
                 Display={menu}  

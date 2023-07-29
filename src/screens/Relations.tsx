@@ -6,9 +6,9 @@ import { ProfileHeader, SideMenu, Footer, AddSuper, Supervisors, Patients } from
 import { useGetMe, useRelations } from '../hooks';
 
 const Relations = ({ navigation }: any) => {
-  const { GetMe, user } = useGetMe(navigation);
-  const [open, setOpen] = React.useState(false);
-  const [display, setDisplay] = React.useState<React.ReactNode | null>(null);
+    const { GetMe, user } = useGetMe(navigation);
+    const [open, setOpen] = React.useState(false);
+    const [display, setDisplay] = React.useState<React.ReactNode | null>(null);
 
   React.useEffect(() => {
     GetMe();
@@ -34,7 +34,32 @@ const Relations = ({ navigation }: any) => {
 
       {display}
 
-      <Footer />
+      <Footer
+                ToChat={()=>{
+
+                    navigation.navigate("Chat")
+                }}
+
+                ToDevice={
+                    ()=>{
+                    
+                        navigation.navigate("Scanner")
+                    }
+                }
+
+                ToRelations={()=>{
+                    navigation.navigate("Relations")
+                }}
+
+                ToHome={
+                  ()=>{
+                      navigation.navigate("Dashboard")
+                  }
+              }
+
+                
+                
+               />
 
       <SideMenu Hide={setOpen} Display={open} />
     </Native.View>

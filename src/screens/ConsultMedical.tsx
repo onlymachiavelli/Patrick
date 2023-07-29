@@ -357,7 +357,19 @@ const ConsultMedical = ({navigation}:any) =>{
                         navigation.navigate("Scanner")
                     }
                 }
-                To
+
+                ToRelations={()=>{
+                    navigation.navigate("Relations")
+                }}
+
+
+                ToHome={
+                    ()=>{
+                        navigation.navigate("Dashboard")
+                    }
+                }
+
+                
                />
         </Native.View>  
     )

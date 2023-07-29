@@ -10,7 +10,7 @@ const App = () =>{
   return (
     <NavigationContainer >
       <Stack.Navigator 
-        initialRouteName="Location"
+        initialRouteName="Tester"
       >
         
           <Stack.Screen 
@@ -28,7 +28,7 @@ const App = () =>{
             }}
           />
 
-      <Stack.Screen 
+        <Stack.Screen 
             name="Signup"
             component={Screens.Signup}
 
@@ -39,7 +39,7 @@ const App = () =>{
           />
 
 
-<Stack.Screen 
+        <Stack.Screen 
             name="Happy"
             component={Screens.Happy}
 
@@ -49,7 +49,7 @@ const App = () =>{
             }}
           />
 
-      <Stack.Screen 
+        <Stack.Screen 
             name="Profile"
             component={Screens.Profile}
 
@@ -59,7 +59,7 @@ const App = () =>{
             }}
           />
 
-<Stack.Screen 
+        <Stack.Screen 
             name="HeartStatus"
             component={Screens.HeartStatus}
 
@@ -70,7 +70,7 @@ const App = () =>{
           />
 
 
-      <Stack.Screen 
+        <Stack.Screen 
             name="MedicalInfo"
             component={Screens.MedicalInfo}
 
@@ -82,7 +82,7 @@ const App = () =>{
 
 
 
-<Stack.Screen 
+        <Stack.Screen 
             name="Scanner"
             component={Screens.Scanner}
 
@@ -93,7 +93,7 @@ const App = () =>{
           />
 
 
-<Stack.Screen 
+        <Stack.Screen 
             name="ConsultMedical"
             component={Screens.ConsultMedical}
 
@@ -103,7 +103,7 @@ const App = () =>{
             }}
           />
 
-<Stack.Screen 
+        <Stack.Screen 
             name="Chat"
             component={Screens.Chat}
 
@@ -114,7 +114,7 @@ const App = () =>{
           />
 
           
-<Stack.Screen 
+        <Stack.Screen 
             name="Restore"
             component={Screens.Restore}
 
@@ -124,7 +124,7 @@ const App = () =>{
             }}
           />
 
-<Stack.Screen 
+          <Stack.Screen 
             name="Verify"
             component={Screens.Verify}
 
@@ -134,7 +134,7 @@ const App = () =>{
             }}
           />
 
-<Stack.Screen 
+        <Stack.Screen 
             name="Relations"
             component={Screens.Relations}
 
@@ -144,9 +144,29 @@ const App = () =>{
             }}
           />
 
-<Stack.Screen 
+        <Stack.Screen 
             name="Location"
             component={Screens.Location}
+
+            //remove the header 
+            options={{
+              headerShown: false
+            }}
+          />
+
+
+        <Stack.Screen 
+            name="Dashboard"
+            component={Screens.Dashboard}
+
+            //remove the header 
+            options={{
+              headerShown: false
+            }}
+          />
+          <Stack.Screen 
+            name="Heart"
+            component={Screens.Heart}
 
             //remove the header 
             options={{

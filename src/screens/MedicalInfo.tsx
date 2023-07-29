@@ -386,7 +386,32 @@ const MedicalInfo = ({navigation}:any) =>{
                }
                Display={open}
             />
-               <Footer/>
+               <Footer
+                ToChat={()=>{
+
+                    navigation.navigate("Chat")
+                }}
+
+                ToDevice={
+                    ()=>{
+                    
+                        navigation.navigate("Scanner")
+                    }
+                }
+
+                ToRelations={()=>{
+                    navigation.navigate("Relations")
+                }}
+
+                ToHome={
+                    ()=>{
+                        navigation.navigate("Dashboard")
+                    }
+                }
+
+                
+                
+               />
         </Native.View>  
     )
 }
