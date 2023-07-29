@@ -10,7 +10,7 @@ const App = () =>{
   return (
     <NavigationContainer >
       <Stack.Navigator 
-        initialRouteName="Tester"
+        initialRouteName="Location"
       >
         
           <Stack.Screen 
@@ -137,6 +137,16 @@ const App = () =>{
 <Stack.Screen 
             name="Relations"
             component={Screens.Relations}
+
+            //remove the header 
+            options={{
+              headerShown: false
+            }}
+          />
+
+<Stack.Screen 
+            name="Location"
+            component={Screens.Location}
 
             //remove the header 
             options={{

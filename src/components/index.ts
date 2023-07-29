@@ -12,4 +12,5 @@ import Receiver from "./Receiver"
 import AddSuper from "./AddSuperVisor"
 import Supervisors from "./supList"
 import Patients from "./patients"
-export {Header, Input, SmallInp, InfoCard, Footer, ProfileHeader, SideMenu, SearchBox, Loading, Sender , Receiver, AddSuper, Supervisors, Patients}
+import Map from "./Map"
+export {Header, Input, SmallInp, InfoCard, Footer, ProfileHeader, SideMenu, SearchBox, Loading, Sender , Receiver, AddSuper, Supervisors, Patients, Map}

@@ -12,5 +12,6 @@ import useGetMe from '../hooks/useGetme'
 import Restore from './ResotrePass'
 import Verify from './Verify'
 import Relations from './Relations'
+import Location from './Location'
 
-export {SignIn, Tester, Signup, Happy, Profile, HeartStatus, MedicalInfo, Scanner, ConsultMedical, Chat , useGetMe, Restore, Verify, Relations}
+export {SignIn, Tester, Signup, Happy, Profile, HeartStatus, MedicalInfo, Scanner, ConsultMedical, Chat , useGetMe, Restore, Verify, Relations, Location}
