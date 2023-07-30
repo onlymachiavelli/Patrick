@@ -10,10 +10,12 @@ import Lottie from 'lottie-react-native'
 import {AddSuper} from './../components'
 import {Input} from './'
 
-const Patients = () =>{
+const Patients = ({...props}) =>{
 
     //animation ref 
     const animation = React.useRef(null)
+
+    console.log("shit", props.Rel)
     return (
         <Native.ScrollView style={relationsStyle.superList}>
             <Native.Text style={relationsStyle.title}>

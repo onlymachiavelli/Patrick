@@ -28,7 +28,7 @@ const Dashboard = ({ navigation }: any) => {
       />
 
       {/* Replace Native._ScrollView with ScrollView */}
-      <ScrollView style={{ width: "100%" ,maxHeight:"70%" ,  backgroundColor:"red" }}>
+      <ScrollView style={{ width: "100%" ,maxHeight:"78%" ,paddingTop:10,  }}>
         <View style={{
           width: "90%",
           height: "auto",
@@ -137,6 +137,36 @@ const Dashboard = ({ navigation }: any) => {
         />
     </Native.View>
 
+
+    <Native.View style={{
+        width : "90%" , 
+        height : 180 ,
+        alignSelf:"center",
+        display : "flex" , 
+        alignItems:"center" , 
+        justifyContent:"center" , 
+        flexDirection:"column" ,
+        paddingRight:10,
+        borderWidth:1,
+        borderColor:"#eee", 
+
+        
+        borderRadius:5,
+        marginTop:10
+    }}>
+
+        <Native.Text style={{width  :"100%" , textAlign:"left",paddingLeft:20,color:"orange",
+    paddingTop:50}}>
+            My Temperature 
+        </Native.Text>
+        <Graph
+            Color={"orange"}
+        />
+    </Native.View>
+    <Native.View style={{
+
+        height:100
+    }}></Native.View>
       </ScrollView>
       <Footer
                 ToChat={()=>{

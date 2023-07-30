@@ -2,25 +2,32 @@ import * as Native from 'react-native';
 import * as React from 'react';
 
 import { relationsStyle } from '../styles';
-import { ProfileHeader, SideMenu, Footer, AddSuper, Supervisors, Patients } from '../components';
-import { useGetMe, useRelations } from '../hooks';
+import { ProfileHeader, SideMenu, Footer, AddSuper, Supervisors, Patients,Loading } from '../components';
+import { useGetMe, useRelations } from '../hooks'
 
 const Relations = ({ navigation }: any) => {
     const { GetMe, user } = useGetMe(navigation);
     const [open, setOpen] = React.useState(false);
     const [display, setDisplay] = React.useState<React.ReactNode | null>(null);
-
+  const {GetRelations, relations} = useRelations()
   React.useEffect(() => {
-    GetMe();
-  }, []);
+    GetMe()
+    GetRelations()
+  }, [])
 
   React.useEffect(() => {
     if (user) {
-      setDisplay(user.user.type === 'patient' ? <Supervisors /> : <Patients />);
+      setDisplay(user.user.type === 'patient' ? <Supervisors Rel={relations} /> : <Patients Rel={relations} />);
     }
-  }, [user]);
 
-  return (
+
+  }, [user])
+
+
+  if (relations) {
+    console.log("damn" , relations)
+  }
+  return !user || !relations ? (<Loading Open={true} />):(
     <Native.View style={relationsStyle.container}>
       <ProfileHeader
         Display={setOpen}
@@ -32,7 +39,11 @@ const Relations = ({ navigation }: any) => {
         Gender={user ? user.user.gender : 'Loading'}
       />
 
-      {display}
+      {
+      
+      display
+      
+      }
 
       <Footer
                 ToChat={()=>{
