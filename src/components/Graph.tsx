@@ -23,46 +23,44 @@ import { Dimensions } from "react-native"
 const screenWidth = Dimensions.get("window").width
 
 const Graph = ({...props}) => {
-  
+  console.log(props.DATA)
 
   const data = {
-    labels: props.Labels,
+    labels: props.Labels ? props.Labels : [0],
     datasets: [
       {
-        data: [3, 1, 4, 8, 10, 22, 5, 66, 77, 88, 20, 0, 22, 78, 120],
-        color: () => props.Color, // optional (not needed since we have chartConfig)
-        strokeWidth: 3, // optional
+        data: props.DATA ?props.DATA :[0],
+        color: () => props.Color, 
+        strokeWidth: 3, 
       },
     ],
   }
 
-  // ...
 const chartConfig = {
   backgroundGradientFrom: "transparent",
   backgroundGradientFromOpacity: 0,
   backgroundGradientTo: "transparent",
   backgroundGradientToOpacity: 0,
-  color: (opacity = 1) => props.Color, // Use a constant color value // grid color 
-  strokeWidth: 0, // optional, default 3
+  color: (opacity = 1) => props.Color, 
+  strokeWidth: 0, 
   barPercentage: 0.2,
-  useShadowColorFromDataset: false, // optional
+  useShadowColorFromDataset: false, 
 }
-// ...
 const animatedValue = new Animated.Value(0);
 useEffect(() => {
   Animated.timing(animatedValue, {
-    toValue: 1, // The final value you want to animate to
-    duration: 1000, // The duration of the animation in milliseconds
-    useNativeDriver: true, // Enable native driver for better performance
-  }).start();
-}, []);
+    toValue: 1, 
+    duration: 1000,
+    useNativeDriver: true,
+  }).start()
+}, [])
 
   return (
       <View>
         <View style={{}}>
           <ScrollView
             contentContainerStyle={{
-              paddingVertical: 30,
+              paddingVertical: 10,
               justifyContent: "center",
             }}
           >

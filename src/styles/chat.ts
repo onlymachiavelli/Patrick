@@ -68,18 +68,8 @@ const chatStyle= StyleSheet.create({
         justifyContent:"center",
         margin:5,
         backgroundColor: "#fff",
-        shadowColor: "#000",
-        shadowOffset: {
-        width: 0,
-        height: 0.5,
-        },
-        shadowOpacity: 0.5,
-        shadowRadius: 6,
-        // Android elevation
-        elevation: 6,
-        alignSelf:"center",
-        borderWidth:0.5, 
-        borderColor:"#555",
+        
+        
     },
     sendbtn:{
         width:45,

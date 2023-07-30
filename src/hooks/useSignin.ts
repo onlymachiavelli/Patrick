@@ -24,14 +24,14 @@ const useSignin = (navigation:any) =>{
             if (res.status == 200) {
                 AsyncStorage.SetOne("token" , res.data.token)
                 ToastAndroid.show(
-                    "Authenticated, Heading to your Profile", 
+                    "Authenticated, Heading to your Dashboard", 
                     ToastAndroid.SHORT
                 )
                 setEmail("")
                 setPassword("")
                 
                 setResult(res.data)
-                navigation.navigate("Profile")
+                navigation.navigate("Dashboard")
 
 
 

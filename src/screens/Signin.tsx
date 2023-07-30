@@ -17,7 +17,7 @@ const SignIn = ({navigation} : any) =>{
 
         AsyncStorage.GetOne("token").then(res=>{
             if (res) {
-                navigation.navigate("Profile")
+                navigation.navigate("Dashboard")
             }
         })
     },[])
