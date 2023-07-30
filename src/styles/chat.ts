@@ -50,7 +50,7 @@ const chatStyle= StyleSheet.create({
 
     message : {
         width : "100%",
-        height : "auto" ,
+        height : "auto" , 
         display : "flex" , 
         alignItems:"center" ,
         justifyContent:"center",

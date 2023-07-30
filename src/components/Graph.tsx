@@ -16,7 +16,12 @@ const Graph = ({ ...props }) => {
   }
   const formatYLabelFunc = (value:number) => {
     // Round the value to the nearest integer
-    return Math.round(value).toString() + "-  "
+    if(props.DECIMAL) {
+      return Math.round(value).toString() + "-  "
+
+    }
+    
+    return value.toString()+"-"
   }
   const chartConfig = {
     backgroundGradientFrom: "transparent",
@@ -27,10 +32,7 @@ const Graph = ({ ...props }) => {
     strokeWidth: 0,
     barPercentage: 0.2,
     useShadowColorFromDataset: true,
-
   }
-
-  
   const animatedValue = new Animated.Value(0)
   useEffect(() => {
     Animated.timing(animatedValue, {
@@ -63,7 +65,7 @@ const Graph = ({ ...props }) => {
           >
             <LineChart
               //pure integer data 
-              formatYLabel={formatYLabelFunc} // Pass the function reference
+              formatYLabel={formatYLabelFunc} // Pass the f unction reference
 
               data={data}
               width={screenWidth * 1}
@@ -80,7 +82,20 @@ const Graph = ({ ...props }) => {
 
                 marginTop:15
               }}
-              withHorizontalLines={false}
+              withHorizontalLines={props.HOR ? true : false }
+
+              withVerticalLines={props.VER ?true : false}
+              //remove numbers on  the vertical line 
+
+
+              //remove the numbers on axe Y 
+              showNumbersOnTop={false}
+              //no on the y axe they should be hidden 
+
+
+
+              //remove the values 
+              withInnerLines={props.GRID ? true : false }
             />
           </Animated.View>
         </ScrollView>
