@@ -11,7 +11,7 @@ const CustomMarker = () => (
   //<FontAwesome name="map" size={25} color="white" />
   
   <Native.Image
-    source={{ uri: 'https://static.vecteezy.com/system/resources/previews/010/157/991/original/pin-location-icon-sign-symbol-design-free-png.png' }}
+    source={{ uri: 'https://en.wikipedia.org/wiki/File:Peter_Griffin.png' }}
     style={{ width: 25, height: 38,resizeMode: 'stretch', }} 
   />
 )
@@ -20,12 +20,20 @@ const Map = ({ ...props }) => {
   return (
     <Native.View style={{ width: '100%', height }}>
       <MapView
-        initialRegion={{
-          latitude: 33.8869,
-          longitude: 9.5375,
-          latitudeDelta: 0.0922,
-          longitudeDelta: 0.0421,
-        }}
+        initialRegion={
+          {
+              latitude: 36.8354,
+              longitude: 10.2083,
+              latitudeDelta: 0.0922,
+              longitudeDelta: 0.0421,
+          }
+      }
+    
+         
+
+
+
+      
         style={{
           width: '100%',
           height: '100%',
@@ -33,9 +41,13 @@ const Map = ({ ...props }) => {
 
 
       >
-        <Marker coordinate={{ latitude: latitude, longitude: longitude }}
+        <Marker  coordinate={{
+
+              latitude:36.8354,//location ? location.coords.latitude : 0,
+              longitude:10.2083//location ? location.coords.longitude : 0
+              }}
             title='Hey' 
-            description='Shut up Meg'
+            description='This is My Location'
         >
           <CustomMarker />
         </Marker>

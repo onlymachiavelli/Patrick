@@ -293,6 +293,7 @@ const Dashboard = ({ navigation }: any) => {
             fontSize:10
         }}>{heart}</Text>
         <Graph
+        Grid={true}
         DECIMAL={true}
             Color={"white"}
 
@@ -359,6 +360,10 @@ const Dashboard = ({ navigation }: any) => {
         <FontAwesome5 name="lungs" size={15} color="white" /> My Oxygen Level: 98%
         </Native.Text>
         <Graph
+        HOR={true}
+        VER={true}
+        //Grid={true}
+
             Color={"white"}
 
             Labels={[
@@ -410,6 +415,8 @@ const Dashboard = ({ navigation }: any) => {
         <FontAwesome5 name="temperature-high" size={15} color="white" /> My Body Temperature : 37DEG
         </Native.Text>
         <Graph
+        HOR={true}
+        VER={true}
             Color={"white"}
 
             Labels={[
