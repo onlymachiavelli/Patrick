@@ -10,9 +10,10 @@ import * as Location from 'expo-location'
 import Female from './../lottieFiles/Female.json'
 import Male from './../lottieFiles/Male.json'
 import Lottie from 'lottie-react-native'
+import { AntDesign } from '@expo/vector-icons'
 const Dashboard = ({ navigation }: any) => {
-  const { GetMe, user } = useGetMe(navigation);
-  const [open, setOpen] = React.useState(false);
+  const { GetMe, user } = useGetMe(navigation)
+  const [open, setOpen] = React.useState(false)
   const [location, setLocation]:any = React.useState(null)
   const [errorMsg, setErrorMsg] :any= React.useState(null)
   //create animation ref 
@@ -20,13 +21,13 @@ const Dashboard = ({ navigation }: any) => {
   React.useEffect(()=>{
     (async () => {
       
-        let { status } = await Location.requestForegroundPermissionsAsync();
+        let { status } = await Location.requestForegroundPermissionsAsync()
         if (status !== 'granted') {
-          setErrorMsg('Permission to access location was denied');
+          setErrorMsg('Permission to access location was denied')
           return;
         }
   
-        let location = await Location.getCurrentPositionAsync({});
+        let location = await Location.getCurrentPositionAsync({})
         setLocation(location);
       })()
   })
@@ -36,12 +37,7 @@ const Dashboard = ({ navigation }: any) => {
    
   }, [])
 
-  let text = 'Waiting..';
-  if (errorMsg) {
-    text = errorMsg;
-  } else if (location) {
-    text = JSON.stringify(location);
-  }
+
 
   console.log(location)
   return (
@@ -58,7 +54,6 @@ const Dashboard = ({ navigation }: any) => {
 
       
 
-      {/* Replace Native._ScrollView with ScrollView */}
       <ScrollView style={{ width: "100%" ,maxHeight:"78%" ,paddingTop:10,  }}>
         <View style={{
           width: "90%",
@@ -69,14 +64,6 @@ const Dashboard = ({ navigation }: any) => {
           borderRadius: 20,
 
         }}>
-          {
-            /*
-            
-            <Text style={{ fontSize: 20, padding: 10 }}>
-            Hey {user ? user.user.fullname : "Loading name"}, Your Health is Stable, nothing To worry About.
-          </Text>
-            */
-          }
 
           <MapView 
             style={{
@@ -136,31 +123,37 @@ const Dashboard = ({ navigation }: any) => {
         height : 180 ,
         alignSelf:"center",
         display : "flex" , 
-        alignItems:"center" , 
+        alignItems:"flex-start" , 
         justifyContent:"center" , 
         flexDirection:"column" ,
-        paddingRight:10,
         borderWidth:1,
         borderColor:"#eee",
         backgroundColor:"#F63C3C", 
+        paddingRight:10,
+        
 
         
         borderRadius:5,
         marginTop:10
     }}>
-
-        <Native.Text style={{width  :"100%" , textAlign:"left",paddingLeft:20,color:"white",
-    paddingTop:50}}>
-            My Blood Pressure 
+        
+        <Native.Text style={{
+        width: "100%",
+        textAlign: "center",
+        paddingLeft: 20,
+        color: "white",
+        paddingTop: 50
+        }}>
+        <AntDesign name="heart" size={15} color="white" /> My Blood Pressure: 60BMP
         </Native.Text>
         <Graph
             Color={"white"}
 
             Labels={[
-                "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15",
+                "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13",
               ]}
 
-              DATA={[30, 1, 4, 8, 10, 22, 5, 66, 77, 88, 20, 0, 22, 78, 120]}
+              DATA={[30, 1, 4, 8, 10, 22, 5, 66, 77, 88, 20, 0, 22]}
         />
     </Native.View>
         </Native.TouchableOpacity>

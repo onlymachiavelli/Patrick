@@ -31,9 +31,7 @@ const Chat = ({navigation} : any) =>{
     message , setMessage, SendAndReceive,conversation, setConv
         } = useChatter(all)
 
-        if (all) {
-          console.log( "this is all", all)
-        }
+
 
         React.useEffect(() => {
           // Automatically scroll to the bottom whenever the conversation is updated
