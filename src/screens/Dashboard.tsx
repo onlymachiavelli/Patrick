@@ -2,7 +2,7 @@ import * as React from 'react'
 import { View, Text, ScrollView, Dimensions } from 'react-native'
 import * as Native from 'react-native'
 import { ProfileHeader, Footer, SideMenu } from '../components'
-import { AsyncStorage, useGetMe } from '../hooks'
+import { AsyncStorage, useGetMe, useDash } from '../hooks'
 import Graph from '../components/Graph'
 import MapView, {Marker} from 'react-native-maps'
 const { height } = Dimensions.get("screen")
@@ -15,6 +15,10 @@ import Healthy from './../lottieFiles/healthy.json'
 import No from './../lottieFiles/no.json'
 import { AntDesign,FontAwesome5 } from '@expo/vector-icons'
 const Dashboard = ({ navigation }: any) => {
+    const {
+        health, heart,
+        GetHealth,GetHeart
+    } = useDash()
   const { GetMe, user } = useGetMe(navigation)
   const [open, setOpen] = React.useState(false)
   const [location, setLocation]:any = React.useState(null)
@@ -37,6 +41,9 @@ const Dashboard = ({ navigation }: any) => {
         let location = await Location.getCurrentPositionAsync({})
         setLocation(location);
       })()
+
+
+
   })
 
   const [device, setDevice] : any = React.useState()
@@ -46,9 +53,15 @@ const Dashboard = ({ navigation }: any) => {
     AsyncStorage.GetOne("device").then(res=>{
         setDevice(res)
     })
-    
 
-  }, [])
+
+    GetHealth()
+    GetHeart()
+
+
+    
+    
+}, [])
   
 
 
@@ -174,7 +187,7 @@ const Dashboard = ({ navigation }: any) => {
                 fontSize:20,
                 textAlign:"center"
             }}>
-                {user?  user.user.fullname : ""} Your Are currently Healthy
+                {user?  user.user.fullname : ""} Your Are currently {health}
             </Text>
 
 
@@ -274,6 +287,11 @@ const Dashboard = ({ navigation }: any) => {
         }}>
         <AntDesign name="heart" size={15} color="white" /> My Blood Pressure: 60BMP
         </Native.Text>
+        <Text style={{
+            color:"white",
+            alignSelf:"center",
+            fontSize:10
+        }}>{heart}</Text>
         <Graph
         DECIMAL={true}
             Color={"white"}
@@ -368,7 +386,7 @@ const Dashboard = ({ navigation }: any) => {
         height : 180 ,
         alignSelf:"center",
         display : "flex" , 
-        alignItems:"flex-start" , 
+        alignItems:"center" , 
         justifyContent:"center" , 
         flexDirection:"column" ,
         borderWidth:1,
@@ -416,16 +434,15 @@ const Dashboard = ({ navigation }: any) => {
         >
         <Native.View style={{
         width : "90%" , 
-        height : 180 ,
+        height : 100 ,
         alignSelf:"center",
         display : "flex" , 
-        alignItems:"flex-start" , 
+        alignItems:"center" , 
         justifyContent:"center" , 
         flexDirection:"column" ,
         borderWidth:1,
         borderColor:"#eee",
         backgroundColor:"#95A72C", 
-        paddingRight:10,
         
 
         
@@ -438,19 +455,18 @@ const Dashboard = ({ navigation }: any) => {
         textAlign: "center",
         paddingLeft: 20,
         color: "white",
-        paddingTop: 50
         }}>
-        <AntDesign name="heart" size={15} color="white" /> My Blood Pressure: 60BMP
+        <FontAwesome5 name="walking" size={15} color="white" /> My Steps
         </Native.Text>
-        <Graph
-            Color={"white"}
 
-            Labels={[
-                "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13",
-              ]}
-
-              DATA={[30, 1, 4, 8, 10, 22, 5, 66, 77, 88, 20, 0, 22]}
-        />
+        <Text style={{
+            color:"white" , 
+            fontSize:30,
+            alignSelf:"center",
+        }}>
+            20 Steps
+        </Text>
+        
     </Native.View>
         </Native.TouchableOpacity>
 

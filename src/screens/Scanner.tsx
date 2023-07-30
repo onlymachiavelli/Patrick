@@ -8,6 +8,8 @@ const Scanner = ({navigation}:any) => {
   const [hasPermission, setHasPermission]:any = useState<PermissionStatus | null>(null)
   const [scanned, setScanned] = useState(false)
 
+  const [device, setDevice] : any = useState()
+
   useEffect(() => {
     const getBarCodeScannerPermissions = async () => {
       const { status } = await BarCodeScanner.requestPermissionsAsync()
@@ -15,6 +17,14 @@ const Scanner = ({navigation}:any) => {
     }
 
     getBarCodeScannerPermissions()
+
+
+    AsyncStorage.GetOne("device").then(res=>{
+      if (res) {
+        navigation.navigate("Dashboard")
+      }
+    })
+
   }, [])
 
   const handleBarCodeScanned = async({ type, data }: any) => {
